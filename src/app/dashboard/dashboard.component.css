@@ -1,0 +1,102 @@
+.dashdiv {
+
+  margin-top: 100px;
+  width: 453px;
+  margin-left: 45px;
+  height: 770px;
+  background: #FFFFFF;
+  box-shadow: 0px 25px 69px -12px rgba(23, 31, 70, 0.15);
+  border-radius: 12px;
+
+}
+label {
+
+  margin-bottom: 19px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+
+  display: flex;
+  align-items: center;
+
+  /* blue */
+
+  color: #0B69FF;}
+
+.info{
+  margin-bottom: 28px;
+padding-top: 30px;
+place-content: flex-start;
+margin-left: 34px;
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  display: flex;
+  align-items: center;
+
+  /* black */
+
+  color: #3B3663;
+
+}
+button.moisjours {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+
+
+
+  background: #FFFFFF;
+  /* gery */
+
+  border: 1px solid #E6EAF5;
+  border-radius: 5px 5px 5px 5px;
+}
+label.btn{
+  border-color:  #E6EAF5;
+  height: 33px;
+}
+.forselect {
+  display:flex;
+}
+.datefin {
+  float: left;
+  margin-right: auto;
+  margin-left: 35px;
+  margin-top: 5px;
+}
+.paramcourbe {
+
+  /* Paramétrage des courbes */
+
+
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  place-content: flex-start;
+
+  color: #3B3663;
+}
+.type {
+  margin-left: 15px;
+}
+.range {
+  width: 300px;
+}
+.fixchiffre {
+  margin-right: 5px;
+}

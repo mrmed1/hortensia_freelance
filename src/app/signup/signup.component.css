@@ -1,0 +1,39 @@
+.signupdiv {
+  position: absolute;
+  width: 476px;
+  height: 505px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #FFFFFF;
+  box-shadow: 0px 25px 69px -12px rgba(23, 31, 70, 0.15);
+  border-radius: 12px;
+}
+
+
+
+.ligne {
+  border: 0.5px solid rgba(162, 162, 162, 0.6);
+}
+
+.termsalign {
+  margin-top: -10px;
+  text-align: center;
+}
+
+.terms {
+
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 100%;
+  /* or 10px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #B9BEC7;
+}

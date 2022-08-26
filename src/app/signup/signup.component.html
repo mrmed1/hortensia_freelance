@@ -1,0 +1,56 @@
+
+<div class="signupdiv">
+  <h1 class="title">Let’s Go</h1>
+  <div class="container">
+
+
+    <form class="form">
+
+      <div class="form-group">
+        <label for="Email">Full Name</label>
+        <input class="form-control input-box icon" id="name"
+               placeholder="&#xf007;  Enter your name"
+               type="text">
+
+      </div>
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input aria-describedby="emailHelp" class="form-control input-box icon" id="Email"
+               placeholder="&#xf0e0;  Enter your email"
+               type="email">
+
+      </div>
+      <div class="form-group">
+        <label for="Password">Choose Password</label>
+        <div class="inputContainer">
+          <input class="form-control input-box icon " id="Password" placeholder="&#xf023;  Minimum 8 characters"
+                 type="password">
+          <a class="inputImg" href="forget"><span class="forgetText">Forgot Password?</span></a>
+        </div>
+
+      </div>
+
+      <button class="btn btn-primary loginbtn" type="submit">Start free 7-day trial</button>
+    </form>
+    <div class="signup">
+      <span (click)="toSSO()">
+        or signup with SSO
+      </span>
+    </div>
+  </div>
+  <div>
+
+  </div>
+  <div class="inputContainer">
+    <hr class="ligne">
+    <p class="terms termsalign">By clicking the button above, you agree to our <a class="terms ms-1 me-1 " href=""> Terms of Service </a> and <a class="terms ms-1" href="">Privacy Policy</a>.</p>
+  </div>
+</div>
+
+
+<div class="textbtn">
+  <span class="textaccount">Already using project curve?</span>
+  <button class="btn btn-primary signbtn" routerLink="" type="button">Login</button>
+</div>
+
+

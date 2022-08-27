@@ -4,11 +4,12 @@
   <div class="container">
 
 
-    <form class="form">
+    <form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.formGroup">
 
       <div class="form-group">
         <label for="Email">Full Name</label>
         <input class="form-control input-box icon" id="name"
+               formControlName="Fullname"
                placeholder="&#xf007;  Enter your name"
                type="text">
 
@@ -16,6 +17,7 @@
       <div class="form-group">
         <label for="Email">Email</label>
         <input aria-describedby="emailHelp" class="form-control input-box icon" id="Email"
+               formControlName="Email"
                placeholder="&#xf0e0;  Enter your email"
                type="email">
 
@@ -24,8 +26,9 @@
         <label for="Password">Choose Password</label>
         <div class="inputContainer">
           <input class="form-control input-box icon " id="Password" placeholder="&#xf023;  Minimum 8 characters"
+                 formControlName="Password"
                  type="password">
-          <a class="inputImg" href="forget"><span class="forgetText">Forgot Password?</span></a>
+          <a class="inputImg" routerLink="/forget"><span class="forgetText">Forgot Password?</span></a>
         </div>
 
       </div>

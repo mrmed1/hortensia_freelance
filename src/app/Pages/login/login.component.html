@@ -10,20 +10,22 @@
         <label for="Email">Email</label>
         <input aria-describedby="emailHelp" class="form-control input-box icon" id="Email"
                placeholder="&#xf0e0;  Enter your email"
+               [(ngModel)]="mail"
+               name="Email"
                type="email">
 
       </div>
       <div class="form-group">
         <label for="Password">Password</label>
         <div class="inputContainer">
-          <input class="form-control input-box icon " id="Password" placeholder="&#xf023;  Enter password"
+          <input class="form-control input-box icon " id="Password" [(ngModel)]="mdp" name="Password" placeholder="&#xf023;  Enter password"
                  type="password">
           <a class="inputImg" href="forget"><span class="forgetText">Forgot Password?</span></a>
         </div>
 
       </div>
 
-      <button class="btn btn-primary loginbtn" type="submit">Log In</button>
+      <button class="btn btn-primary loginbtn" type="submit" (click)="submit()">Log In</button>
     </form>
   </div>
   <div>

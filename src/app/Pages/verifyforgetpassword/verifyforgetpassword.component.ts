@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenstorageService} from "../../Service/Security/tokenstorage.service";
 import {Router} from "@angular/router";
-import {FormService} from "../../Service/form.service";
-import {WebRequestService} from "../../Service/web-request.service";
+import {FormService} from "../../Service/Form/form.service";
+import {WebRequestService} from "../../Service/Webrequest/web-request.service";
+import {NotificationService} from "../../Service/Notification/notification.service";
 
 @Component({
   selector: 'app-verifyforgetpassword',
@@ -14,7 +15,8 @@ export class VerifyforgetpasswordComponent implements OnInit {
   constructor(private router : Router,
               public formService:FormService,
               private webRequest:WebRequestService,
-              private tokenStorage:TokenstorageService) {
+              private tokenStorage:TokenstorageService,
+              private notificationService: NotificationService) {
   }
 
   ngOnInit(): void {
@@ -32,6 +34,7 @@ export class VerifyforgetpasswordComponent implements OnInit {
     this.webRequest.post("auth/mail-verify",verify).subscribe(
       data => {
         if(data.status == 200)
+          this.notificationService.success("Vérification de votre compte est effectué avec succès")
           this.router.navigateByUrl("")
       },
       error => console.error(error)

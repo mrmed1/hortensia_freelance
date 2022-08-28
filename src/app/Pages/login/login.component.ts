@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {FormService} from "../../Service/form.service";
-import {WebRequestService} from "../../Service/web-request.service";
+import {FormService} from "../../Service/Form/form.service";
+import {WebRequestService} from "../../Service/Webrequest/web-request.service";
 import {TokenstorageService} from "../../Service/Security/tokenstorage.service";
 
 @Component({

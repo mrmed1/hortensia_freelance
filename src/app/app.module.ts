@@ -13,7 +13,14 @@ import { VerifyforgetpasswordComponent } from './Pages/verifyforgetpassword/veri
 import { SignupComponent } from './Pages/signup/signup.component';
 import { SignupSSOComponent } from './Pages/signup-sso/signup-sso.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
-import { GraphComponent } from './Pages/graph/graph.component';
+import { GraphComponent } from './Pages/charts/graph/graph.component';
+import {NgApexchartsModule} from "ng-apexcharts";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LogoComponent } from './Utils/logo/logo.component';
+import { TestComponent } from './test/test.component';
+import { PSCurveChartComponent } from './Pages/charts/pscurve-chart/pscurve-chart.component';
+import {ChartsModule} from "ng2-charts";
+
 
 @NgModule({
   declarations: [
@@ -25,6 +32,10 @@ import { GraphComponent } from './Pages/graph/graph.component';
     SignupSSOComponent,
     DashboardComponent,
     GraphComponent,
+    LogoComponent,
+    TestComponent,
+    PSCurveChartComponent,
+
 
   ],
   imports: [
@@ -35,6 +46,9 @@ import { GraphComponent } from './Pages/graph/graph.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgApexchartsModule,
+    MatSnackBarModule,
+    ChartsModule,
 
 
   ],

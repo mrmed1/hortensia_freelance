@@ -278,3 +278,14 @@ p {
   font-size: 14px;
   line-height: 100%;
 }
+
+/*html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+snack-bar-container.success {
+  background-color: #5cb85c;
+  color : #fff;
+}
+snack-bar-container.warn {
+  background-color: #d71125;
+  color : #fff;
+}

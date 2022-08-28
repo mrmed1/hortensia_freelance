@@ -1,117 +1,151 @@
-<div class="content-wapper">
-  <!-- row 1-->
-  <div class="row">
-    <!-- col 1-->
-    <div class="col-12 col-md-4">
-<div class="dashdiv container">
-
-
-    <p class="info">Information a renseigner</p>
-  <form class="form">
-
-    <div class="form-group">
-      <label for="data">Date des données d’entrée </label>
-      <input class="form-control input-box " id="data"
-             placeholder="JJ/MM/AAAA"
-             type="text">
+<app-logo></app-logo>
+<div class="allpage">
+  <div class="project">
+    <div class="btn-group forselect"  role="group">
+      <input autocomplete="off" checked class="btn-check" value="1" id="projnondebute" name="projdebute" (change)="onChange($event)" type="radio">
+      <label class="btn btn-outline-primary justify-content-center" for="projnondebute">Projet non débuté</label>
+      <input autocomplete="off" class="btn-check" id="projdebute" value="2" name="projdebute" type="radio" (change)="onChange($event)">
+      <label class="btn btn-outline-primary justify-content-center" for="projdebute">Projet débuté</label>
 
     </div>
+  </div>
+  <div class="dashboard">
+    <div class="first">
+      <form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.chartform">
+      <div class="inputsSection" id="raf">
+        <h2>Information a renseigner</h2>
+        <div>
+          <label>
+            Date des données d’entrée<img
+            alt="Info" class="icon"
+            src="assets/icon/info_icon.svg"
+            title="Merci de choisir la date de vos données: l'avancement renseigné plus tard est celui réalisé à cette date.">
+          </label>
 
-    <div class="form-group">
-      <div class="forselect">
-      <label for="nbproj">Nombre de mois projet passé</label>
-<!--      <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn moisjours">Jour</button>
-        <button type="button" class="btn moisjours">Mois</button>
-
-      </div>-->
-      <div class="btn-group ms-5" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
-        <label class="btn btn-outline-primary" for="btnradio1">Jours</label>
-
-        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
-        <label class="btn btn-outline-primary" for="btnradio2">Mois</label>
-
-
-      </div>
-      </div>
-      <input aria-describedby="emailHelp" class="form-control input-box icon" id="nbproj"
-             placeholder="Entier naturel"
-             type="number">
-
-    </div>
-    <div class="form-group">
-      <label for="pourcentrea">Pourcentage du réalisé </label>
-      <div class="inputContainer">
-        <input class="form-control input-box icon " id="pourcentrea" placeholder="Nombre en pourcentage"
-               type="number">
-        <!--<a class="inputImg" href="forget"><span class="forgetText">Forgot Password?</span></a>-->
-      </div>
-
-    </div>
-
-
-    <div class="form-group datefin">
-      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio1" id="btnradio3" autocomplete="off" >
-        <label class="btn btn-outline-primary" for="btnradio3">Date de fin calculer</label>
-
-        <input type="radio" class="btn-check" name="btnradio1" id="btnradio4" autocomplete="off" checked>
-        <label class="btn btn-outline-primary" for="btnradio4">Date de fin fixe</label>
-
-      </div>
-
-    </div>
-
-    <div class="datefin">
-      <span class="paramcourbe">Paramétrage des courbes</span>
-    </div>
-    <div class="datefin d-flex mt-2">
-      <span>Réglage rapide : </span>
-
-        <div class="btn-group type" role="group" aria-label="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio3" id="btnradio5" autocomplete="off" >
-          <label class="btn btn-outline-primary" for="btnradio5">~Linéaire</label>
-
-          <input type="radio" class="btn-check" name="btnradio3" id="btnradio6" autocomplete="off" checked>
-          <label class="btn btn-outline-primary" for="btnradio6">~S-Curve Classique</label>
-
+          <input placeholder="JJ/MM/AAAA" type="date" formControlName="inputDataDate">
         </div>
+        <div>
+          <div class="d-flex flex-nowrap justify-content-between ">
+            <label>Nombre de mois projet passé<img
+              alt="Info" class="icon"
+              src="assets/icon/info_icon.svg"
+              title="Combien de mois sont-ils passés depuis le début de votre projet jusqu'à votre date des données?">
+            </label>
+            <div class="btn-group forselect w-25" role="group">
+              <input autocomplete="off" class="btn-check" id="btnjour" name="JM" type="radio">
+              <label class="btn btn-outline-primary justify-content-center" for="btnjour">Jour</label>
 
+              <input autocomplete="off" checked class="btn-check" id="btnmois" name="JM" type="radio">
+              <label class="btn btn-outline-primary justify-content-center" for="btnmois">Mois</label>
 
-    </div>
-    <div class="datefin">
+            </div>
+          </div>
 
-        <div class="form-group">
-          <label >Tangentes aux extrémités (µ) </label>
-          <div><span>0.1</span><input type="range" class="range" min="0.1" max="10" step="0.01" value="8"><span id="demo1">10</span></div>
-
+          <input placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text" >
         </div>
+        <div>
+          <label>Pourcentage du réalisé<img
+            alt="Info" class="icon"
+            src="assets/icon/info_icon.svg"
+            title="A combien est votre avancement à la date des données?">
+          </label>
 
-    </div>
+          <input  placeholder="Nombre en pourcentage" formControlName="donePercentage"  type="number" value="">
+        </div>
+        <h2>Paramétrage des courbes</h2>
+        <div>
+          <div class="forselect"><label>Réglage rapide :</label>
+            <div class="btn-group type ms-2" role="group" >
+              <input autocomplete="off" class="btn-check" id="lineaireraf"  name="rapidSetting" type="radio">
+              <label class="btn btn-outline-primary justify-content-center" for="lineaireraf">~Linéaire</label>
 
-    <div class="datefin">
+              <input autocomplete="off" checked class="btn-check"  id="classiqueraf"  name="rapidSetting" type="radio">
+              <label class="btn btn-outline-primary justify-content-center" for="classiqueraf">~S-Curve Classique</label>
 
-      <div class="form-group">
-        <label >Tangentes aux extrémités (µ) </label>
-        <div><span class="fixchiffre">-5</span><input type="range" class="range" min="0.1" max="15" step="0.01" value="5.31"><span id="demo2">15</span></div>
-
+            </div>
+          </div>
+          <div><label>Tangentes aux extrémités (µ)</label></div>
+          <div><input max="10" min="0.1" step="0.01" type="range" value="5.49" formControlName="mu"><span>5.49</span></div>
+        </div>
+        <div>
+          <div><label>Décalage axe (σ)</label><select formControlName="sigAdjustor">
+            <option value="initial">—</option>
+            <option value="fourty">40%</option>
+            <option value="fifty">50%</option>
+            <option value="sixty">60%</option>
+          </select></div>
+          <div><input max="15" min="-5" step="0.01" type="range" value="0" formControlName="sig"><span>0</span></div>
+        </div>
+        <button type="submit">Date de fin et courbe prévisionnelle</button>
       </div>
+        <!--<div class="inputsSection" id="sigmoid" style="display: none">
+          <h2>Information a renseigner</h2>
 
+          <div>
+            <div class="d-flex flex-nowrap justify-content-between ">
+              <label>Nombre de mois projet passé<img
+                alt="Info" class="icon"
+                src="assets/icon/info_icon.svg"
+                title="Combien de mois sont-ils passés depuis le début de votre projet jusqu'à votre date des données?">
+              </label>
+              <div class="btn-group forselect w-25" role="group">
+                <input autocomplete="off" class="btn-check" id="btnradio2" name="JM" type="radio">
+                <label class="btn btn-outline-primary justify-content-center" for="btnradio2">Jour</label>
+
+                <input autocomplete="off" checked class="btn-check" id="btnradio3" name="JM" type="radio">
+                <label class="btn btn-outline-primary justify-content-center" for="btnradio3">Mois</label>
+
+              </div>
+            </div>
+
+            <input placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text" >
+          </div>
+
+          <h2>Paramétrage des courbes</h2>
+          <div>
+            <div class="forselect"><label>Réglage rapide :</label>
+              <div class="btn-group type ms-2" role="group" >
+                <input autocomplete="off" class="btn-check" id="lineaire"  name="rapidSetting" type="radio">
+                <label class="btn btn-outline-primary justify-content-center" for="lineaire">~Linéaire</label>
+
+                <input autocomplete="off" checked class="btn-check"  id="classique"  name="rapidSetting" type="radio">
+                <label class="btn btn-outline-primary justify-content-center" for="classique">~S-Curve Classique</label>
+
+              </div>
+            </div>
+            <div><label>Tangentes aux extrémités (µ)</label></div>
+            <div><input max="10" min="0.1" step="0.01" type="range" value="5.49" formControlName="mu"><span>5.49</span></div>
+          </div>
+          <div>
+            <div><label>Décalage axe (σ)</label><select formControlName="sigAdjustor">
+              <option value="initial">—</option>
+              <option value="fourty">40%</option>
+              <option value="fifty">50%</option>
+              <option value="sixty">60%</option>
+            </select></div>
+            <div><input max="15" min="-5" step="0.01" type="range" value="0" formControlName="sig"><span>0</span></div>
+          </div>
+          <button type="submit">Date de fin et courbe prévisionnelle</button>
+        </div>-->
+      </form>
+      <div class="chartSection">
+        <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copy chart (PNG)</span>
+        </div>
+        <div class="pcurveChart" id="ps-curve-chart">
+          <canvas height="400" role="img" style="display: block; box-sizing: border-box; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); height: 400px; width: 888px;"
+                  width="888"></canvas>
+        </div>
+        <div class="helperLabels">
+          <div><p>Nombre de mois restant : <br><span>-</span></p>
+            <p>Date de fin prévisionnelle : <br><span class="majus">-</span></p></div>
+          <div>
+            <div><img alt="Green Circle"
+                      src="assets/icon/green-circle.svg"><span>Pourcentage d’avacement par mois</span></div>
+            <div><img alt="Blue Circle"
+                      src="assets/icon/blue-circle.svg"><span>Pourcentage d’avacement cumulé</span></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <button class="btn btn-primary courbebtn" type="submit">Date de fin et courbe prévisionnelle</button>
-
-  </form>
-
-
+  </div>
 </div>
-
-    </div></div></div>
-
-
-<!-- col 2 for graph-->
-<div class="col-12 col-md-8">
-</div>
-
-<!-- row2 for table-->
-

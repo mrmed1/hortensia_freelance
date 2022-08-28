@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {FormService} from "../../Service/form.service";
+import {FormService} from "../../Service/Form/form.service";
 import {User} from "../../Models/user";
-import {WebRequestService} from "../../Service/web-request.service";
+import {WebRequestService} from "../../Service/Webrequest/web-request.service";
 import {TokenstorageService} from "../../Service/Security/tokenstorage.service";
+import {NotificationService} from "../../Service/Notification/notification.service";
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,8 @@ export class SignupComponent implements OnInit {
   constructor(private router : Router,
               public formService:FormService,
               private webRequest:WebRequestService,
-              private tokenStorage:TokenstorageService) { }
+              private tokenStorage:TokenstorageService,
+              private notificationService:NotificationService) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +37,10 @@ export class SignupComponent implements OnInit {
       this.router.navigateByUrl("verify")
 
     },
-    error => console.error(error)
+    error => {
+      this.notificationService.warn("Email address already exists")
+      console.error(error)
+    }
   )
 
   }

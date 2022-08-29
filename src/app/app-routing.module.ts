@@ -7,7 +7,7 @@ import {SignupSSOComponent} from "./Pages/signup-sso/signup-sso.component";
 import {VerifyforgetpasswordComponent} from "./Pages/verifyforgetpassword/verifyforgetpassword.component";
 import {DashboardComponent} from "./Pages/dashboard/dashboard.component";
 import {GraphComponent} from "./Pages/charts/graph/graph.component";
-import { TestComponent } from './test/test.component';
+
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:"verify",component:VerifyforgetpasswordComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"graph",component:GraphComponent},
-  {path:"test",component:TestComponent},
+
 
 ];
 

@@ -8,7 +8,8 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  project = new FormControl();
+  inputProj: string = 'raf'
+
 
   constructor(private renderer: Renderer2,
               public formService: FormService) {
@@ -26,17 +27,5 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  onChange(e) {
-    const sigmoid = document.getElementById("sigmoid");
-    const raf = document.getElementById("raf");
-    if(e.value == 1)
-    {
-      raf.style.visibility = 'visible';
-      sigmoid.style.visibility = 'none';
-    }
 
-    sigmoid.style.visibility = 'visible';
-    raf.style.visibility = 'none';
-
-  }
 }

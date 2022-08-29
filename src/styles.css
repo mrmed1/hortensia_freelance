@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
 body {
   background: url(assets/background.png) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -177,19 +178,7 @@ input {
   flex-grow: 0;
 }
 
-p {
-  margin-top: 20%;
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
-  place-content: center;
-}
+
 
 .inputContainer {
   position: relative;

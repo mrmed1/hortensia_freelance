@@ -1,0 +1,418 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+
+.fontradio{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  height: 29px ;
+  color: #AEAEAE !important;
+}
+
+.copyicon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #658cf2
+}
+
+.copyicon.active {
+  cursor: pointer
+}
+
+.copyicon.active:hover {
+  text-decoration: underline;
+  text-decoration-color: #574dfa
+}
+
+.copyicon img {
+  transform: scale(.8);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px #0000001a;
+  padding: 10px
+}
+
+
+
+
+.allpage .dashboard {
+  padding: 1rem 2rem 3rem;
+  margin: 0 auto;
+  max-width: 1500px
+}
+
+.allpage .dashboard .first {
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+  margin-bottom: 48px
+}
+
+.allpage .dashboard .first > div:first-of-type {
+  flex: 2
+}
+
+.allpage .dashboard .first > div:last-of-type {
+  flex: 5
+}
+
+@media screen and (max-width: 500px) {
+  .allpage .dashboard {
+    padding: 1rem 1rem 3rem
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .allpage .dashboard .first {
+    display: initial;
+    gap: 0
+  }
+
+  .allpage .dashboard .first > div {
+    margin-bottom: 20px
+  }
+
+  .allpage .dashboard .first > div:first-of-type {
+    flex: 1
+  }
+
+  .allpage .dashboard .first > div:last-of-type {
+    flex: 1
+  }
+  .project {
+    text-align: center;
+    margin-top: 95px;
+
+  }
+}
+
+.inputsSection {
+  box-shadow: 0 2px 10px #0000001a;
+  border-radius: 6px;
+  padding: 30px 32px
+}
+
+.inputsSection h2 {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  color: #3B3663;
+  margin-bottom: 25px
+}
+
+.inputsSection h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3b3663;
+  margin-top: 32px;
+  margin-bottom: 24px
+}
+
+.inputsSection > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px
+}
+
+
+
+.inputsSection > div label img {
+  margin-left: 6px;
+  transform: translateY(2px)
+}
+
+.inputsSection > div input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(.5)
+}
+
+.inputsSection > div input[type=text], .inputsSection > div input[type=date], .inputsSection > div input[type=month], .inputsSection > div input[type=number] {
+  font-family: Inter, sans-serif;
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #445275;
+  padding: 0 12px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #b6c2e2;
+  border-radius: 6px
+}
+
+.inputsSection > div input[type=text]:focus, .inputsSection > div input[type=date]:focus, .inputsSection > div input[type=month]:focus {
+  outline: 3px solid rgba(35, 91, 236, .3137254902)
+}
+
+.inputsSection > div input[type=range] {
+  outline: none
+}
+
+.inputsSection > div input[type=range]:active {
+  outline: 1px solid rgba(35, 91, 236, .3137254902);
+  border-radius: 6px
+}
+
+.inputsSection > div select {
+  border: .25px solid #dddddd;
+  border-radius: 2px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .1));
+  font-style: normal;
+  font-weight: 500;
+  color: #3b3663;
+  font-size: 14px;
+  padding: 2px 5px;
+  margin-left: 5px;
+  transform: translateY(-2px)
+}
+
+.inputsSection > div select:focus {
+  outline: 1px solid rgba(35, 91, 236, .3137254902)
+}
+
+.inputsSection > div > div {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap
+}
+
+.inputsSection > div > div span {
+  width: 35px;
+  text-align: right
+}
+
+.inputsSection > div > div input {
+  flex: 1
+}
+
+.project .btn-group {
+  width: 273px;
+}
+.type {
+  width: 225px;
+}
+.inputsSection button {
+  background: #235bec;
+  box-shadow: 15px 12px 6px #b6b6b60d;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity .2s;
+  min-height: 45px;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff
+}
+
+.inputsSection button:hover {
+  opacity: .75
+}
+
+.inputsSection button:focus {
+  outline: 3px solid rgba(35, 91, 236, .3137254902)
+}
+
+.inputsSection .forselect {
+  margin: 2px 0 8px
+}
+
+.inputsSection .forselect label {
+  color: #3b3663 !important
+}
+
+@media screen and (max-width: 500px) {
+  .inputsSection {
+    padding: 2rem 1rem
+  }
+}
+
+.chartSection {
+  box-shadow: 0 2px 10px #0000001a;
+  border-radius: 6px;
+  padding: 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+.chartSection ._chart_11jjx_169 {
+  height: 480px;
+  width: 100%;
+  border: 1px solid #235bec;
+  background: rgba(35, 91, 236, .5)
+}
+
+.chartSection .pcurveChart {
+  min-height: 400px
+}
+
+.chartSection .helperLabels {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem
+}
+
+.chartSection .helperLabels > div {
+  font-family: Inter, sans-serif
+}
+
+.chartSection .helperLabels > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #222
+}
+
+.chartSection .helperLabels > div:first-of-type span {
+  color: #0b69ff;
+  text-transform: lowercase
+}
+
+.chartSection .helperLabels > div:first-of-type span.majus {
+  text-transform: capitalize
+}
+
+.chartSection .helperLabels > div:first-of-type br {
+  display: none
+}
+
+.chartSection .helperLabels > div:nth-of-type(2) {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000;
+  gap: 1.25rem
+}
+
+.chartSection .helperLabels > div:nth-of-type(2) div {
+  display: flex;
+  align-items: center;
+  gap: 5px
+}
+
+.chartSection .helperLabels > div:nth-of-type(2) div span {
+  max-width: 155px
+}
+
+@media screen and (max-width: 500px) {
+  .chartSection {
+    padding: 2rem 1rem
+  }
+
+  .chartSection .helperLabels div:first-of-type br {
+    display: initial
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .chartSection .helperLabels {
+    flex-direction: column-reverse;
+    gap: 1.5rem
+  }
+
+  .chartSection .helperLabels > div:nth-of-type(2) {
+    margin-left: auto
+  }
+}
+
+body {
+  font-family: Montserrat, sans-serif
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+::selection {
+  color: #fff;
+  background: rgba(35, 91, 236, .5)
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bdbdbd;
+  border: 4px solid transparent;
+  background-clip: content-box;
+  transition: background-color .3s;
+  border-radius: 2rem
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bdbdbdbb
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+label.btn {
+  border-color: #E6EAF5;
+  height: 25px;
+
+}
+label {
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+
+  display: flex;
+  align-items: center;
+
+  /* blue */
+
+  color: #0B69FF;
+}
+.project {
+  margin-left: 8%;
+  margin-top: 95px
+}
+p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  color: #222222;
+}
+.percent::after {
+  content: '%';
+}

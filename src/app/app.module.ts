@@ -17,9 +17,10 @@ import { GraphComponent } from './Pages/charts/graph/graph.component';
 import {NgApexchartsModule} from "ng-apexcharts";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LogoComponent } from './Utils/logo/logo.component';
-import { TestComponent } from './test/test.component';
-import { PSCurveChartComponent } from './Pages/charts/pscurve-chart/pscurve-chart.component';
+
 import {ChartsModule} from "ng2-charts";
+import { RafinputsectionComponent } from './Pages/dashboard/rafinputsection/rafinputsection.component';
+import { SigmoidinputsectionComponent } from './Pages/dashboard/sigmoidinputsection/sigmoidinputsection.component';
 
 
 @NgModule({
@@ -33,8 +34,9 @@ import {ChartsModule} from "ng2-charts";
     DashboardComponent,
     GraphComponent,
     LogoComponent,
-    TestComponent,
-    PSCurveChartComponent,
+
+    RafinputsectionComponent,
+    SigmoidinputsectionComponent,
 
 
   ],

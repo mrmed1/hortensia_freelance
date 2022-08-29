@@ -38,7 +38,7 @@ export class SignupComponent implements OnInit {
 
     },
     error => {
-      this.notificationService.warn("Email address already exists")
+    //  this.notificationService.warn("Email address already exists")
       console.error(error)
     }
   )

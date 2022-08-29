@@ -51,15 +51,19 @@
   display: flex;
   align-items: flex-start;
   gap: 64px;
-  margin-bottom: 48px
+  margin-bottom: 48px;
+  margin-top: 50px;
 }
 
 .allpage .dashboard .first > div:first-of-type {
-  flex: 2
+  flex: 2;
+
 }
 
 .allpage .dashboard .first > div:last-of-type {
-  flex: 5
+  flex: 5;
+  margin-top: 25px;
+
 }
 
 @media screen and (max-width: 500px) {
@@ -87,7 +91,7 @@
   }
   .project {
     text-align: center;
-    margin-top: 95px;
+
 
   }
 }
@@ -258,7 +262,7 @@
 }
 
 .chartSection .pcurveChart {
-  min-height: 400px
+  min-height: 400px;
 }
 
 .chartSection .helperLabels {
@@ -399,10 +403,7 @@ label {
 
   color: #0B69FF;
 }
-.project {
-  margin-left: 8%;
-  margin-top: 95px
-}
+
 p {
   font-family: 'Montserrat';
   font-style: normal;
@@ -416,3 +417,5 @@ p {
 .percent::after {
   content: '%';
 }
+
+

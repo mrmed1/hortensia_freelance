@@ -1,37 +1,61 @@
+<div class="container">
+<div class="row justify-content-start">
+  <div class="col-4">
+    <app-logo></app-logo>
+  </div>
+  <div class="col-4 d-flex mt-5 ">
+    <span class="me-4">Simulation</span>
+    <button class="simulationbtn firstbtn"><span class="font">Nouvelle simulation</span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.4375 4.6875L9.70625 8.5375C9.475 8.8625 9.09375 9.0625 8.6875 9.0625H6.8125V5.3125H4.9375V3.4375H1.1875V1.5625C1.1875 0.875 1.75 0.3125 2.4375 0.3125H8.6875C9.09375 0.3125 9.475 0.50625 9.70625 0.8375L12.4375 4.6875ZM5.5625 6.5625H3.6875V4.6875H2.4375V6.5625H0.5625V7.8125H2.4375V9.6875H3.6875V7.8125H5.5625V6.5625Z" fill="#0B69FF"/>
+    </svg>
+    </button>
+    <button class="simulationbtn mid"><span class="font">ouvrir une simulation</span><svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.875 10.375H2.125V1.625H6.5V0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V6H10.875V10.375ZM7.75 0.375V1.625H9.99375L3.85 7.76875L4.73125 8.65L10.875 2.50625V4.75H12.125V0.375H7.75Z" fill="#0B69FF"/>
+    </svg>
+    </button>
+   <div class="div_aide">
+     <button class="simulationbtn final"><span class="font">Enregistrer la simulation</span><svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path d="M9.625 0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V2.875L9.625 0.375ZM6.5 10.375C5.4625 10.375 4.625 9.5375 4.625 8.5C4.625 7.4625 5.4625 6.625 6.5 6.625C7.5375 6.625 8.375 7.4625 8.375 8.5C8.375 9.5375 7.5375 10.375 6.5 10.375ZM8.375 4.125H2.125V1.625H8.375V4.125Z" fill="#0B69FF"/>
+     </svg>
+     </button>
+     <div class="v-line"></div>
+      <div class="last_btns">
+        <button class="simulationbtn aidebtn">
+          <span class="font">aide</span>
+          <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.875 10.75H7.125V9.5H5.875V10.75ZM6.5 0.75C3.05 0.75 0.25 3.55 0.25 7C0.25 10.45 3.05 13.25 6.5 13.25C9.95 13.25 12.75 10.45 12.75 7C12.75 3.55 9.95 0.75 6.5 0.75ZM6.5 12C3.74375 12 1.5 9.75625 1.5 7C1.5 4.24375 3.74375 2 6.5 2C9.25625 2 11.5 4.24375 11.5 7C11.5 9.75625 9.25625 12 6.5 12ZM6.5 3.25C5.11875 3.25 4 4.36875 4 5.75H5.25C5.25 5.0625 5.8125 4.5 6.5 4.5C7.1875 4.5 7.75 5.0625 7.75 5.75C7.75 7 5.875 6.84375 5.875 8.875H7.125C7.125 7.46875 9 7.3125 9 5.75C9 4.36875 7.88125 3.25 6.5 3.25Z" fill="#0B69FF"/>
+          </svg>
+        </button>
 
-  <app-logo></app-logo>
-<div class="row d-flex justify-content-center mt-5">
+     <button class="simulationbtn comptebtn">
+       <span class="font">compte</span>
+       <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5.875 10.75H7.125V9.5H5.875V10.75ZM6.5 0.75C3.05 0.75 0.25 3.55 0.25 7C0.25 10.45 3.05 13.25 6.5 13.25C9.95 13.25 12.75 10.45 12.75 7C12.75 3.55 9.95 0.75 6.5 0.75ZM6.5 12C3.74375 12 1.5 9.75625 1.5 7C1.5 4.24375 3.74375 2 6.5 2C9.25625 2 11.5 4.24375 11.5 7C11.5 9.75625 9.25625 12 6.5 12ZM6.5 3.25C5.11875 3.25 4 4.36875 4 5.75H5.25C5.25 5.0625 5.8125 4.5 6.5 4.5C7.1875 4.5 7.75 5.0625 7.75 5.75C7.75 7 5.875 6.84375 5.875 8.875H7.125C7.125 7.46875 9 7.3125 9 5.75C9 4.36875 7.88125 3.25 6.5 3.25Z" fill="#0B69FF"/>
+       </svg>
+     </button>
+      </div>
+      </div>
+  </div>
 
-  <button class="simulationbtn firstbtn"><span class="font">Nouvelle simulation</span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.4375 4.6875L9.70625 8.5375C9.475 8.8625 9.09375 9.0625 8.6875 9.0625H6.8125V5.3125H4.9375V3.4375H1.1875V1.5625C1.1875 0.875 1.75 0.3125 2.4375 0.3125H8.6875C9.09375 0.3125 9.475 0.50625 9.70625 0.8375L12.4375 4.6875ZM5.5625 6.5625H3.6875V4.6875H2.4375V6.5625H0.5625V7.8125H2.4375V9.6875H3.6875V7.8125H5.5625V6.5625Z" fill="#0B69FF"/>
-  </svg>
-  </button>
-  <button class="simulationbtn mid"><span class="font">ouvrir une simulation</span><svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10.875 10.375H2.125V1.625H6.5V0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V6H10.875V10.375ZM7.75 0.375V1.625H9.99375L3.85 7.76875L4.73125 8.65L10.875 2.50625V4.75H12.125V0.375H7.75Z" fill="#0B69FF"/>
-  </svg>
-  </button>
-  <button class="simulationbtn final"><span class="font">Enregistrer la simulation</span><svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M9.625 0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V2.875L9.625 0.375ZM6.5 10.375C5.4625 10.375 4.625 9.5375 4.625 8.5C4.625 7.4625 5.4625 6.625 6.5 6.625C7.5375 6.625 8.375 7.4625 8.375 8.5C8.375 9.5375 7.5375 10.375 6.5 10.375ZM8.375 4.125H2.125V1.625H8.375V4.125Z" fill="#0B69FF"/>
-  </svg>
-  </button>
 </div>
-
-
+</div>
 <div class="allpage">
+
+  <div class="dashboard">
+    <div class="first">
+<div class="d-flex flex-column">
   <div class="project">
-    <div class="btn-group forselect" role="group">
-      <input autocomplete="off" checked class="btn-check" value="sigmoid" id="projnondebute" name="projdebute" [(ngModel)]="inputProj"  type="radio">
-      <label class="btn btn-outline-primary fontradio justify-content-center" for="projnondebute">Projet non débuté</label>
-      <input autocomplete="off" class="btn-check" id="projdebute" value="raf" name="projdebute" [(ngModel)]="inputProj" type="radio" >
-      <label class="btn btn-outline-primary fontradio justify-content-center" for="projdebute">Projet débuté</label>
+    <div class="btn-group " role="group">
+      <input autocomplete="off" checked class="btn-check" value="raf" id="projnondebute" name="projdebute" [(ngModel)]="inputProj"  type="radio">
+      <label class="btn btn-outline-primary justify-content-center" for="projnondebute">Projet non débuté</label>
+      <input autocomplete="off" class="btn-check" id="projdebute" value="sigmoid" name="projdebute" [(ngModel)]="inputProj" type="radio" >
+      <label class="btn btn-outline-primary justify-content-center" for="projdebute">Projet débuté</label>
 
     </div>
   </div>
-  <div class="dashboard">
-    <div class="first">
-
      <app-rafinputsection *ngIf="inputProj == 'raf'"></app-rafinputsection>
       <app-sigmoidinputsection *ngIf="inputProj == 'sigmoid'"></app-sigmoidinputsection>
+</div>
       <div class="chartSection">
         <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copy chart (PNG)</span>
         </div>

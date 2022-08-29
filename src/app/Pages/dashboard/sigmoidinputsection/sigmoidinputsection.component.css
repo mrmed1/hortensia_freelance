@@ -1,0 +1,37 @@
+@import "../../../../assets/css/dashboard.css";
+
+.fontradio {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+
+  color: #AEAEAE;
+}
+
+.rapid {
+  width: 115px;
+  height: 14px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+
+  display: flex;
+  align-items: center;
+
+  color: #3B3663;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

@@ -1,0 +1,75 @@
+
+<form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.chartform">
+  <div class="inputsSection" >
+    <h2>Information a renseigner</h2>
+
+
+    <div>
+      <label>
+        Date des données d’entrée<img
+        alt="Info" class="icon"
+        src="assets/icon/info_icon.svg"
+        title="Merci de choisir la date de vos données: l'avancement renseigné plus tard est celui réalisé à cette date.">
+      </label>
+
+      <input placeholder="JJ/MM/AAAA" type="date" formControlName="inputDataDate">
+    </div>
+    <div>
+      <div class="d-flex flex-nowrap justify-content-between ">
+        <label>Nombre de mois projet passé<img
+          alt="Info" class="icon"
+          src="assets/icon/info_icon.svg"
+          title="Combien de mois sont-ils passés depuis le début de votre projet jusqu'à votre date des données?">
+        </label>
+        <div class="btn-group   w-25" role="group">
+          <input autocomplete="off" class="btn-check" id="btnradio2" name="JM" type="radio">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="btnradio2">Jour</label>
+
+          <input autocomplete="off" checked class="btn-check" id="btnradio3" name="JM" type="radio">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="btnradio3">Mois</label>
+
+        </div>
+      </div>
+
+      <input placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text" >
+    </div>
+    <div>
+      <label>Pourcentage du réalisé<img
+        alt="Info" class="icon"
+        src="assets/icon/info_icon.svg"
+        title="A combien est votre avancement à la date des données?">
+      </label>
+
+      <input  placeholder="Nombre en pourcentage" formControlName="donePercentage"  type="number" value="">
+    </div>
+    <h2>Paramétrage des courbes</h2>
+    <div>
+      <div class="forselect"><label>Réglage rapide :</label>
+        <div class="btn-group type" role="group" >
+          <input autocomplete="off" class="btn-check" id="lineaireraf"  name="rapidSetting" type="radio">
+          <label class="btn btn-outline-primary justify-content-center" for="lineaireraf">~Linéaire</label>
+
+          <input autocomplete="off" checked class="btn-check"  id="classiqueraf"  name="rapidSetting" type="radio">
+          <label class="btn btn-outline-primary justify-content-center" for="classiqueraf">~S-Curve Classique</label>
+
+        </div>
+      </div>
+      <div><label>Tangentes aux extrémités (µ)</label></div>
+      <div><input max="10" min="0.1" step="0.01" type="range" value="5.49" id="tengente" (change)="rangeSlideTengente() ">
+        <span  id="TanValue">5.46</span></div>
+    </div>
+    <div>
+      <div><label>Décalage axe (σ)</label><select formControlName="sigAdjustor" >
+        <option value="initial" selected>—</option>
+        <option value="fourty">40%</option>
+        <option value="fifty">50%</option>
+        <option value="sixty">60%</option>
+      </select></div>
+      <div><input max="15" min="-5" step="0.01" type="range" value="0.33" (change)="rangeSlideoffset()" id="offset"><span id="offsetValue">0.33</span></div>
+    </div>
+    <button type="submit">Date de fin et courbe prévisionnelle</button>
+
+  </div>
+
+
+</form>

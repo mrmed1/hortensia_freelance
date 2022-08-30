@@ -21,6 +21,7 @@ import { LogoComponent } from './Utils/logo/logo.component';
 import {ChartsModule} from "ng2-charts";
 import { RafinputsectionComponent } from './Pages/dashboard/rafinputsection/rafinputsection.component';
 import { SigmoidinputsectionComponent } from './Pages/dashboard/sigmoidinputsection/sigmoidinputsection.component';
+import { ChecksubscriptionComponent } from './Pages/dashboard/checksubscription/checksubscription.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { SigmoidinputsectionComponent } from './Pages/dashboard/sigmoidinputsect
 
     RafinputsectionComponent,
     SigmoidinputsectionComponent,
+    ChecksubscriptionComponent,
 
 
   ],

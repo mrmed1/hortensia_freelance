@@ -8,7 +8,9 @@
   font-size: 14px;
   line-height: 17px;
   height: 29px ;
-  color: #AEAEAE !important;
+  color: #AEAEAE;
+  display: flex;
+  align-items: center;
 }
 
 .copyicon {
@@ -235,9 +237,7 @@
   margin: 2px 0 8px
 }
 
-.inputsSection .forselect label {
-  color: #3b3663 !important
-}
+
 
 @media screen and (max-width: 500px) {
   .inputsSection {
@@ -262,7 +262,7 @@
 }
 
 .chartSection .pcurveChart {
-  min-height: 400px;
+  /*min-height: 400px;*/
 }
 
 .chartSection .helperLabels {

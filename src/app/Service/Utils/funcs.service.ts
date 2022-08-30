@@ -1,16 +1,30 @@
-import { Injectable } from '@angular/core';
+import {Injectable, SimpleChanges} from '@angular/core';
 import moment from "moment";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FuncsService {
-
+   resultTab1: number[] = [];
+   resultTab2: number[] = [];
+  subject = new Subject<any>();
+  displayedDataSigmoid = new Subject<any>();
+  get subject$(): Observable<any> {
+    return this.subject.asObservable();
+  }
+  get displayedDataSigmoid$(): Observable<any> {
+    return this.displayedDataSigmoid.asObservable();
+  }
   constructor() {
-    //console.log(this.getSigmoidDisplayableValues(this.calculateSigmoidOutputs()[0],this.calculateSigmoidOutputs()[1])["tableData"])
+   // console.log(this.getSigmoidDisplayableValues(this.calculateSigmoidOutputs()[0],this.calculateSigmoidOutputs()[1])["tableData"])
   }
 
-
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.resultTab1.currentValue){
+      console.log(this.resultTab1)
+    }
+  }
 
   getTodayDate = () => {
     const today = new Date();
@@ -170,7 +184,7 @@ calculateOutputs = (inputs: any) => {
         ...resultTab2.map((el) => (el * 100).toFixed(2) + '%'),
       ],
     ];
-
+    this.displayedDataSigmoid.next(tableData)
     return {
       tableData,
       isInitialState: false,
@@ -178,12 +192,15 @@ calculateOutputs = (inputs: any) => {
     };
   };
 
-   calculateSigmoidOutputs = () => {
+   calculateSigmoidOutputs = (data) => {
 
 
-    let m = 10; // RATHER, NUMBER OF TOTAL MONTHS
-    let sig = m * 1.22;
-    let mu = m * 0.33;
+    let m = 0 // RATHER, NUMBER OF TOTAL MONTHS
+     let  sig = 0;
+     let mu = 0;
+      m = data["numbermonth"]; // RATHER, NUMBER OF TOTAL MONTHS
+      sig = m * data["tangente"];
+      mu = m * data["offset"];
 
     const tab0: number[] = [];
     const tab1: number[] = [];
@@ -207,14 +224,15 @@ calculateOutputs = (inputs: any) => {
       tab3[i] = tab2[i] / tab2[m - 1];
     }
 
-    let resultTab1: number[] = [];
-    let resultTab2: number[] = [];
+
 
     for (let i = 0; i <= m - 1; i++) {
-      resultTab1[i] = tab3[i];
-      resultTab2[i] = tab1[i] / tab2[m - 1];
+      this.resultTab1[i] = tab3[i];
+      this.resultTab2[i] = tab1[i] / tab2[m - 1];
     }
+     this.subject.next([this.resultTab1,this.resultTab2]) ;
 
-    return [resultTab1, resultTab2];
+    // console.log(this.resultTab1, this.resultTab2)
+    return [this.resultTab1, this.resultTab2];
   };
 }

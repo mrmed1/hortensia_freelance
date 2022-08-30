@@ -10,6 +10,7 @@ import {FormControl} from "@angular/forms";
 export class DashboardComponent implements OnInit {
   inputProj: string = 'raf'
 
+  tableparent = []
 
   constructor(private renderer: Renderer2,
               public formService: FormService) {
@@ -17,7 +18,13 @@ export class DashboardComponent implements OnInit {
       'none');
   }
 
+  receiveMessage($event) {
+    console.log($event)
+    this.tableparent = $event;
+  }
+
   ngOnInit(): void {
+
   }
 
   onSubmit() {

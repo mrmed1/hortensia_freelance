@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import moment from "moment";
 import {FuncsService} from "../../../Service/Utils/funcs.service";
 import {getFirstDayOfMonth} from "../../../Utils/funcs";
@@ -14,7 +14,7 @@ import Chart from "chart.js";
 })
 
 export class GraphComponent implements OnInit {
-
+  @Output() sendDataTable = new EventEmitter<any>();
   @Input() tabledata = [];
   subject = new Subject<any>();
   data : Array<any> = [];
@@ -34,7 +34,7 @@ export class GraphComponent implements OnInit {
       this.funcsService.displayedDataSigmoid$.subscribe(
         data => {
           this.disp([],[])
-
+          this.sendDataTable.emit(data);
           this.disp(this.getData(data[1],data[2])["dataset2"],this.getData(data[1],data[2])["dataset1"]);
         }
       )
@@ -42,9 +42,6 @@ export class GraphComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-    //  console.log(this.getData()["dataset1"])
-    //console.log()
-
 
   }
 
@@ -73,62 +70,6 @@ export class GraphComponent implements OnInit {
   }
 
 
-
-  /*const data = {
-    labels,
-    datasets: [
-      {
-        type: 'bar' as const,
-        label: t('Percentage of progress per month'),
-        data: dataset2,
-        borderColor: 'white',
-        backgroundColor: '#14D193',
-        yAxisID: 'y',
-        order: 2,
-      },
-      {
-        type: 'line' as const,
-        label: "Percentage of cumulative progress",
-        data: dataset1,
-        borderColor: '#0B69FF',
-        backgroundColor: '#0B69FF',
-        yAxisID: 'y1',
-        order: 1,
-      },
-    ],
-  };*/
-
-/*  public chart = {
-    "datasets": [
-      { "data":'this.getData()["dataset2"]',  "label": "Line", "type": "line",borderColor: '#0B69FF',fill:'0B69FF' },
-      { "data":'this.getData()["dataset1"] ', "label": "Bar 1" ,borderColor: 'white',
-        backgroundColor: '#14D193'},
-
-
-    ],
-    "labels": ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "September", "October", "November", "December"],
-    "options": {
-      responsive: true,
-
-      "legend": {
-        "text": "You awesome chart with average line",
-        "display": false,
-      },
-      "scales": {
-        "yAxes": [{
-          "ticks": {
-            "beginAtZero": true
-          }
-        }],
-        "xAxes": [{
-          "ticks": {
-            "min": "Monday",
-            "max": "Sunday",
-          }
-        }],
-      }
-    }
-  };*/
   public options = {
 
 

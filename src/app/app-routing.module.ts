@@ -7,6 +7,8 @@ import {SignupSSOComponent} from "./Pages/signup-sso/signup-sso.component";
 import {VerifyforgetpasswordComponent} from "./Pages/verifyforgetpassword/verifyforgetpassword.component";
 import {DashboardComponent} from "./Pages/dashboard/dashboard.component";
 import {GraphComponent} from "./Pages/charts/graph/graph.component";
+import {SubscriptionComponent} from "./Pages/dashboard/MySettings/subscription/subscription.component";
+import {SettingsComponent} from "./Pages/dashboard/MySettings/settings/settings.component";
 
 
 const routes: Routes = [
@@ -17,8 +19,8 @@ const routes: Routes = [
   {path:"verify",component:VerifyforgetpasswordComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"graph",component:GraphComponent},
-
-
+  {path:"subscription",component:SubscriptionComponent},
+  {path:"settings",component:SettingsComponent},
 ];
 
 @NgModule({

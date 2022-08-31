@@ -5,53 +5,18 @@
       <app-logo></app-logo>
     </div>
     <div class="col-4 d-flex mt-5 ">
-      <div class="container">
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-
-              <div class="modal-body">
-                <div class="">
-                  <h1 class="title">Enregistrer la simulation</h1>
-                  <div class="container">
-
-
-
-
-                      <form class="form">
-                        <div class="form-group">
-                          <label for="Nom">Nom</label>
-                          <input class="form-control input-box " id="Nom" type="text" placeholder="Nom de la sumlation">
-
-                        </div>
-
-
-                        <button class="btn btn-primary loginbtn" type="submit" >Save</button>
-                      </form>
-
-
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-       <span class="me-4">Simulation</span>
-      <button class=" btn btn-outline-primary firstbtn simulationbtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="font">Nouvelle simulation</span>
+      <span class="me-4">Simulation</span>
+      <button class=" btn btn-outline-primary firstbtn simulationbtn"><span class="font">Nouvelle simulation</span>
         <svg fill="none" height="10" viewBox="0 0 13 10" width="13" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12.4375 4.6875L9.70625 8.5375C9.475 8.8625 9.09375 9.0625 8.6875 9.0625H6.8125V5.3125H4.9375V3.4375H1.1875V1.5625C1.1875 0.875 1.75 0.3125 2.4375 0.3125H8.6875C9.09375 0.3125 9.475 0.50625 9.70625 0.8375L12.4375 4.6875ZM5.5625 6.5625H3.6875V4.6875H2.4375V6.5625H0.5625V7.8125H2.4375V9.6875H3.6875V7.8125H5.5625V6.5625Z"
             fill="#0B69FF"/>
         </svg>
       </button>
-      <button class="btn btn-outline-primary simulationbtn mid"><span class="font">ouvrir une simulation</span>
+      <button class="btn btn-outline-primary simulationbtn mid" data-bs-target="#deleteModal"
+              data-bs-toggle="modal"><span class="font">ouvrir une simulation</span>
         <svg fill="none" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M10.875 10.375H2.125V1.625H6.5V0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V6H10.875V10.375ZM7.75 0.375V1.625H9.99375L3.85 7.76875L4.73125 8.65L10.875 2.50625V4.75H12.125V0.375H7.75Z"
@@ -59,7 +24,8 @@
         </svg>
       </button>
       <div class="div_aide">
-        <button class="btn btn-outline-primary simulationbtn final"><span class="font">Enregistrer la simulation</span>
+        <button class="btn btn-outline-primary simulationbtn final" data-bs-target="#saveModal"
+                data-bs-toggle="modal"><span class="font">Enregistrer la simulation</span>
           <svg fill="none" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M9.625 0.375H2.125C1.43125 0.375 0.875 0.9375 0.875 1.625V10.375C0.875 11.0625 1.43125 11.625 2.125 11.625H10.875C11.5625 11.625 12.125 11.0625 12.125 10.375V2.875L9.625 0.375ZM6.5 10.375C5.4625 10.375 4.625 9.5375 4.625 8.5C4.625 7.4625 5.4625 6.625 6.5 6.625C7.5375 6.625 8.375 7.4625 8.375 8.5C8.375 9.5375 7.5375 10.375 6.5 10.375ZM8.375 4.125H2.125V1.625H8.375V4.125Z"
@@ -68,7 +34,7 @@
         </button>
         <div class="v-line"></div>
         <div class="last_btns">
-          <button class=" btn btn-outline-primary simulationbtn aidebtn" >
+          <button class=" btn btn-outline-primary simulationbtn aidebtn">
             <span class="font">aide</span>
             <svg fill="none" height="14" viewBox="0 0 13 14" width="13" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -92,25 +58,25 @@
           <ul class="dropdown-menu ">
             <div class="drp">
               <li>
-                <a class="dropdown-item" href="#">
-               <div class="forspacing">
-                 <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                   <path
-                     d="M8.7159 5.49C8.7359 5.33 8.7509 5.17 8.7509 5C8.7509 4.83 8.7359 4.67 8.7159 4.51L9.7709 3.685C9.8659 3.61 9.8909 3.475 9.8309 3.365L8.8309 1.635C8.7859 1.555 8.7009 1.51 8.6109 1.51C8.5809 1.51 8.5509 1.515 8.5259 1.525L7.2809 2.025C7.0209 1.825 6.7409 1.66 6.4359 1.535L6.2459 0.21C6.2309 0.09 6.1259 0 6.0009 0H4.0009C3.8759 0 3.7709 0.09 3.7559 0.21L3.5659 1.535C3.2609 1.66 2.9809 1.83 2.7209 2.025L1.4759 1.525C1.4459 1.515 1.4159 1.51 1.3859 1.51C1.3009 1.51 1.2159 1.555 1.1709 1.635L0.170896 3.365C0.105896 3.475 0.135896 3.61 0.230896 3.685L1.2859 4.51C1.2659 4.67 1.2509 4.835 1.2509 5C1.2509 5.165 1.2659 5.33 1.2859 5.49L0.230896 6.315C0.135896 6.39 0.110896 6.525 0.170896 6.635L1.1709 8.365C1.2159 8.445 1.3009 8.49 1.3909 8.49C1.4209 8.49 1.4509 8.485 1.4759 8.475L2.7209 7.975C2.9809 8.175 3.2609 8.34 3.5659 8.465L3.7559 9.79C3.7709 9.91 3.8759 10 4.0009 10H6.0009C6.1259 10 6.2309 9.91 6.2459 9.79L6.4359 8.465C6.7409 8.34 7.0209 8.17 7.2809 7.975L8.5259 8.475C8.5559 8.485 8.5859 8.49 8.6159 8.49C8.7009 8.49 8.7859 8.445 8.8309 8.365L9.8309 6.635C9.8909 6.525 9.8659 6.39 9.7709 6.315L8.7159 5.49ZM7.7259 4.635C7.7459 4.79 7.7509 4.895 7.7509 5C7.7509 5.105 7.7409 5.215 7.7259 5.365L7.6559 5.93L8.1009 6.28L8.6409 6.7L8.2909 7.305L7.6559 7.05L7.1359 6.84L6.6859 7.18C6.4709 7.34 6.2659 7.46 6.0609 7.545L5.5309 7.76L5.4509 8.325L5.3509 9H4.6509L4.4759 7.76L3.9459 7.545C3.7309 7.455 3.5309 7.34 3.3309 7.19L2.8759 6.84L2.3459 7.055L1.7109 7.31L1.3609 6.705L1.9009 6.285L2.3459 5.935L2.2759 5.37C2.2609 5.215 2.2509 5.1 2.2509 5C2.2509 4.9 2.2609 4.785 2.2759 4.635L2.3459 4.07L1.9009 3.72L1.3609 3.3L1.7109 2.695L2.3459 2.95L2.8659 3.16L3.3159 2.82C3.5309 2.66 3.7359 2.54 3.9409 2.455L4.4709 2.24L4.5509 1.675L4.6509 1H5.3459L5.5209 2.24L6.0509 2.455C6.2659 2.545 6.4659 2.66 6.6659 2.81L7.1209 3.16L7.6509 2.945L8.2859 2.69L8.6359 3.295L8.1009 3.72L7.6559 4.07L7.7259 4.635ZM5.0009 3C3.8959 3 3.0009 3.895 3.0009 5C3.0009 6.105 3.8959 7 5.0009 7C6.1059 7 7.0009 6.105 7.0009 5C7.0009 3.895 6.1059 3 5.0009 3ZM5.0009 6C4.4509 6 4.0009 5.55 4.0009 5C4.0009 4.45 4.4509 4 5.0009 4C5.5509 4 6.0009 4.45 6.0009 5C6.0009 5.55 5.5509 6 5.0009 6Z"
-                     fill="#323232"/>
-                 </svg>
-                 <span>My settings</span>
-               </div>
+                <a class="dropdown-item" routerLink="/settings">
+                  <div class="forspacing">
+                    <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.7159 5.49C8.7359 5.33 8.7509 5.17 8.7509 5C8.7509 4.83 8.7359 4.67 8.7159 4.51L9.7709 3.685C9.8659 3.61 9.8909 3.475 9.8309 3.365L8.8309 1.635C8.7859 1.555 8.7009 1.51 8.6109 1.51C8.5809 1.51 8.5509 1.515 8.5259 1.525L7.2809 2.025C7.0209 1.825 6.7409 1.66 6.4359 1.535L6.2459 0.21C6.2309 0.09 6.1259 0 6.0009 0H4.0009C3.8759 0 3.7709 0.09 3.7559 0.21L3.5659 1.535C3.2609 1.66 2.9809 1.83 2.7209 2.025L1.4759 1.525C1.4459 1.515 1.4159 1.51 1.3859 1.51C1.3009 1.51 1.2159 1.555 1.1709 1.635L0.170896 3.365C0.105896 3.475 0.135896 3.61 0.230896 3.685L1.2859 4.51C1.2659 4.67 1.2509 4.835 1.2509 5C1.2509 5.165 1.2659 5.33 1.2859 5.49L0.230896 6.315C0.135896 6.39 0.110896 6.525 0.170896 6.635L1.1709 8.365C1.2159 8.445 1.3009 8.49 1.3909 8.49C1.4209 8.49 1.4509 8.485 1.4759 8.475L2.7209 7.975C2.9809 8.175 3.2609 8.34 3.5659 8.465L3.7559 9.79C3.7709 9.91 3.8759 10 4.0009 10H6.0009C6.1259 10 6.2309 9.91 6.2459 9.79L6.4359 8.465C6.7409 8.34 7.0209 8.17 7.2809 7.975L8.5259 8.475C8.5559 8.485 8.5859 8.49 8.6159 8.49C8.7009 8.49 8.7859 8.445 8.8309 8.365L9.8309 6.635C9.8909 6.525 9.8659 6.39 9.7709 6.315L8.7159 5.49ZM7.7259 4.635C7.7459 4.79 7.7509 4.895 7.7509 5C7.7509 5.105 7.7409 5.215 7.7259 5.365L7.6559 5.93L8.1009 6.28L8.6409 6.7L8.2909 7.305L7.6559 7.05L7.1359 6.84L6.6859 7.18C6.4709 7.34 6.2659 7.46 6.0609 7.545L5.5309 7.76L5.4509 8.325L5.3509 9H4.6509L4.4759 7.76L3.9459 7.545C3.7309 7.455 3.5309 7.34 3.3309 7.19L2.8759 6.84L2.3459 7.055L1.7109 7.31L1.3609 6.705L1.9009 6.285L2.3459 5.935L2.2759 5.37C2.2609 5.215 2.2509 5.1 2.2509 5C2.2509 4.9 2.2609 4.785 2.2759 4.635L2.3459 4.07L1.9009 3.72L1.3609 3.3L1.7109 2.695L2.3459 2.95L2.8659 3.16L3.3159 2.82C3.5309 2.66 3.7359 2.54 3.9409 2.455L4.4709 2.24L4.5509 1.675L4.6509 1H5.3459L5.5209 2.24L6.0509 2.455C6.2659 2.545 6.4659 2.66 6.6659 2.81L7.1209 3.16L7.6509 2.945L8.2859 2.69L8.6359 3.295L8.1009 3.72L7.6559 4.07L7.7259 4.635ZM5.0009 3C3.8959 3 3.0009 3.895 3.0009 5C3.0009 6.105 3.8959 7 5.0009 7C6.1059 7 7.0009 6.105 7.0009 5C7.0009 3.895 6.1059 3 5.0009 3ZM5.0009 6C4.4509 6 4.0009 5.55 4.0009 5C4.0009 4.45 4.4509 4 5.0009 4C5.5509 4 6.0009 4.45 6.0009 5C6.0009 5.55 5.5509 6 5.0009 6Z"
+                        fill="#323232"/>
+                    </svg>
+                    <span>My settings</span>
+                  </div>
                 </a>
               </li>
               <li><a class="dropdown-item" href="#">
                 <div class="forspacing">
-                <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7.5 3L6.795 3.705L7.585 4.5H3.5V5.5H7.585L6.795 6.29L7.5 7L9.5 5L7.5 3ZM1.5 1.5H5V0.5H1.5C0.95 0.5 0.5 0.95 0.5 1.5V8.5C0.5 9.05 0.95 9.5 1.5 9.5H5V8.5H1.5V1.5Z"
-                    fill="#323232"/>
-                </svg>
-                <span>Log Out</span>
+                  <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.5 3L6.795 3.705L7.585 4.5H3.5V5.5H7.585L6.795 6.29L7.5 7L9.5 5L7.5 3ZM1.5 1.5H5V0.5H1.5C0.95 0.5 0.5 0.95 0.5 1.5V8.5C0.5 9.05 0.95 9.5 1.5 9.5H5V8.5H1.5V1.5Z"
+                      fill="#323232"/>
+                  </svg>
+                  <span>Log Out</span>
                 </div>
               </a></li>
               <li>
@@ -153,7 +119,7 @@
         <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copy chart (PNG)</span>
         </div>
         <div class="pcurveChart" id="ps-curve-chart">
-          <app-graph [tabledata]="tableparent"></app-graph>
+          <app-graph [tabledata]="tableparent" (sendDataTable)="receiveDataTable($event)"></app-graph>
         </div>
         <div class="helperLabels">
           <div><p>Nombre de mois restant : <br><span>-</span></p>
@@ -166,7 +132,155 @@
           </div>
         </div>
       </div>
+
+
+    </div>
+    <div class="tableSection">
+      <div class="copyBtns">
+        <div class="copyBtn active"><img alt="Copier" src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
+        </div>
+        <div class="copyBtn active"><img alt="Copier" src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
+        </div>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead >
+        <tr>
+          <th>Date</th>
+          <th *ngFor="let mois of dataTable[0]">{{mois}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="x">
+          <th>Pourcentage d’avacement par mois</th>
+          <td *ngFor="let avancemois of dataTable [2]">{{avancemois}}</td>
+
+        </tr>
+        <tr>
+          <th>Pourcentage d’avacement cumulé</th>
+          <td *ngFor="let avancecumule of dataTable [1]">{{avancecumule}}</td>
+        </tr>
+
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
 
+<!-- Save Modal -->
+<div aria-hidden="true" aria-labelledby="saveModal" class="modal fade" id="saveModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="">
+          <h1 class="title">Enregistrer la simulation</h1>
+
+          <form class="form mt-4 ">
+            <div class="form-group d-flex flex-column gap-3">
+              <label for="Nom">Nom</label>
+              <input class="form-control input-box " id="Nom" placeholder="Nom de la simulation" type="text">
+
+            </div>
+
+
+            <button class="btn btn-primary loginbtn mt-4" type="submit">Save</button>
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Open Modal -->
+<div aria-hidden="true" aria-labelledby="openModal" class="modal fade" id="openModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content centermodal">
+
+
+      <div class="openmodal">
+        <div class="row"><h1 class="title">ouvrir une simulation</h1></div>
+        <div class="row"><input class="searchinput" placeholder="&#xf002;" type="text"></div>
+
+        <table class="row-border " id="example" style="width:100%">
+
+          <thead>
+          <tr class="brd">
+            <th>NOM</th>
+            <th>TYPE</th>
+            <th>DATE DE CREATION</th>
+            <th>DELETE</th>
+          </tr>
+          </thead>
+
+
+          <tbody>
+          <tr>
+            <td>
+              <div class="d-flex gap-3">
+                <svg fill="none" height="20" viewBox="0 0 16 20" width="16" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 0C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0H2ZM9 7V1.5L14.5 7H9Z"
+                    fill="#0B69FF"/>
+                </svg>
+
+                <span>Brielle Williamson</span>
+              </div>
+            </td>
+            <td>Integration Specialist</td>
+            <td>New York</td>
+            <td>
+              <svg fill="none" height="24" viewBox="0 0 18 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1.5 20.75C1.5 22.125 2.625 23.25 4 23.25H14C15.375 23.25 16.5 22.125 16.5 20.75V5.75H1.5V20.75ZM4 8.25H14V20.75H4V8.25ZM13.375 2L12.125 0.75H5.875L4.625 2H0.25V4.5H17.75V2H13.375Z"
+                  fill="#F55656"/>
+              </svg>
+            </td>
+
+          </tr>
+
+
+          </tbody>
+
+        </table>
+
+        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit"><span>Ouvrir</span>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- delete Modal -->
+<div aria-hidden="true" aria-labelledby="openModal" class="modal fade" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content centermodal">
+
+
+      <div class="deleteModal">
+        <div class="row"><h1 class="title">Etes-vous sûr ?</h1></div>
+        <form class=" mt-4 ">
+          <div class="form-group d-flex flex-column gap-3">
+            <label for="nomsimulation">Pour validé tapé le nom de fichier</label>
+            <div class="row"><input class="form-control input-box suppinput " id="nomsimulation"
+                                    placeholder="Nom de la simulation" type="text"></div>
+          </div>
+          <div class="d-flex gap-3">
+            <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit"><span>Annuler</span>
+            </button>
+            <button class="btn btn-danger modalbtn mt-4" type="submit"><span>Supprimer</span></button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>

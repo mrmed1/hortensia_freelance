@@ -1,0 +1,242 @@
+
+body{
+  font-family: 'Rubik'
+}
+
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  margin-top: 50px;
+  padding-left: 30px;
+}
+
+
+.cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 30px #dfdfdf;
+  border-radius: 10px;
+  width: 300px;
+}
+.cards h5{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.small{
+  font-family: Rubik;
+  font-style: Regular;
+  font-size: small;
+  line-height: 24px;
+  line-height: 127%;
+  color: rgb(185, 185, 185);
+}
+.scale {
+  transform: scale(1.1);
+}
+.active{
+  position: absolute;
+  width: 145.65px;
+  height: 89.75px;
+  /* left: 273.73px; */
+  top: 0;
+  right: 0;
+  /* blue */
+
+  background: #0B69FF;
+  color: white;
+  transform: rotate(60deg);
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 100px 100px 0;
+  border-color: transparent #0B69FF
+  transparent transparent;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.fontrotate {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  display: inline-block;
+  position: relative;
+  left: 35px;
+  top: 10px;
+  color: #FFFFFF;
+  transform: rotate(45deg);
+}
+
+
+
+.set_href {
+  width: 79px;
+  height: 24px;
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+
+  /* black */
+
+  color: #3B3663;
+
+}
+
+.sub_href {
+  width: 130px;
+  height: 24px;
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+
+  /* blue */
+
+  color: #0B69FF;
+
+
+}
+
+
+
+.lientext {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+
+  /* black */
+
+  color: #3B3663;
+}
+
+
+
+table.pricing th{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  /* black */
+
+  color: #3B3663;
+}
+
+table.pricing td{
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+
+  /* black */
+
+  color: #3B3663;
+
+
+}
+
+.planstitle {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* black */
+
+  color: #3B3663;
+}
+.languagetitle {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+
+  /* black */
+
+  color: #3B3663;
+}
+.invoicetxt {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+
+  /* black */
+
+  color: #3B3663;
+}
+
+.downloadinvoice {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 8px;
+  gap: 17px;
+
+  position: absolute;
+  width: 299px;
+  height: 56px;
+
+
+  /* blue */
+
+  background: #0B69FF;
+  /* General/Flash Planning Blue */
+
+  border: 1px solid #0AB4FF;
+  border-radius: 4px;
+
+}

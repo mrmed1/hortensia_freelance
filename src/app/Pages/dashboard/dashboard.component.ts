@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   inputProj: string = 'raf'
 
   tableparent = []
-
+  dataTable = []
   constructor(private renderer: Renderer2,
               public formService: FormService) {
     this.renderer.setStyle(document.body, 'background',
@@ -27,12 +27,11 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    console.log(this.formService.nbOfMonthsPassed.value)
-    console.log(this.formService.donePercentage.value)
-    console.log(this.formService.inputDataDate.value)
+
+
+
+  receiveDataTable($event: any) {
+    this.dataTable= $event;
 
   }
-
-
 }

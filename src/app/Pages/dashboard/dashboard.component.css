@@ -3,6 +3,15 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
 
 
+.table > :not(caption) > * > * {
+  padding: 0.5px 16.5px;
+}
+
+.table > tbody {
+  vertical-align: revert;
+
+}
+
 .simulationbtn {
   box-sizing: border-box;
 
@@ -39,9 +48,11 @@
   border-radius: 0px 5px 5px 0px;
 
 }
+
 .btn:hover {
   color: white;
 }
+
 .font {
   font-family: 'Montserrat';
   font-style: normal;
@@ -86,7 +97,7 @@
 
   border: 1px solid #E6EAF5;
   border-radius: 5px;
-  order:4;
+  order: 4;
 
 }
 
@@ -104,6 +115,7 @@
 
   background: rgba(255, 184, 0, 0.8);
 }
+
 .drp {
 
 
@@ -117,6 +129,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
+
 .h-div {
   width: 170px;
   height: 0px;
@@ -131,6 +144,7 @@
   border: 1px solid rgb(255, 255, 255);
 
 }
+
 .dropdown-menu li {
   margin-left: 10px;
 }
@@ -162,11 +176,13 @@
   margin-left: auto !important;
 
 }
+
 .modal-header {
 
   padding: var(--bs-modal-header-padding);
 
 }
+
 .modal-body {
 
   padding: var(--bs-modal-padding);
@@ -177,3 +193,376 @@
   padding: 0.75rem;
 
 }
+
+.openmodal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 49px;
+  gap: 10px;
+
+  position: relative;
+  width: 962px;
+  height: 695px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 25px 69px -12px rgba(23, 31, 70, 0.15);
+  border-radius: 12px;
+}
+
+.centermodal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.searchinput {
+  box-sizing: border-box;
+  margin-top: 38px;
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 428px;
+
+  width: 844px;
+  height: 40px;
+
+  /* General/White */
+
+  background: #FFFFFF;
+  /* Light Grey/100 */
+
+  border: 1px solid #D7DFE9;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.deleteModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 49px;
+  gap: 10px;
+
+  position: relative;
+  width: 855px;
+  height: 298px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 25px 69px -12px rgba(23, 31, 70, 0.15);
+  border-radius: 12px;
+}
+
+.modalbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 37px;
+  gap: 10px;
+
+  width: 360px;
+  height: 50px;
+
+  /* blue */
+
+
+  box-shadow: 5px 7px 24px rgba(35, 91, 236, 0.5);
+  border-radius: 9px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+
+.suppinput {
+  width: 735px;
+}
+
+thead {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  padding: 0px 80px;
+
+  width: 810px;
+  height: 65px;
+
+  background: #FFFFFF;
+  /* Light Grey/100 */
+
+  border: 1px solid #D7DFE9;
+  border-radius: 4px 4px 0px 0px;
+
+}
+
+table.row-border tbody th,
+table.row-border tbody td,
+table.display tbody th,
+table.display tbody td {
+}
+
+table.row-border tbody tr:first-child th,
+table.row-border tbody tr:first-child td,
+table.display tbody tr:first-child th,
+table.display tbody tr:first-child td {
+  border-top: none;
+}
+
+tr {
+  height: 62px;
+}
+
+thead th {
+  background-color: white;
+}
+
+thead th:first-child {
+  border-radius: 100px 0 0 100px;
+}
+
+thead th:last-child {
+  border-radius: 0 100px 100px 0;
+}
+
+/* remove border from th... */
+/* !important is only required in stack snippet, probably not in your production code */
+
+.table > thead > tr > th {
+  border: none !important;
+}
+
+/* remove border from first tbody row... */
+
+th {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #7E858E;
+}
+
+td {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #535353;
+}
+
+.table > tbody > tr:first-child > td,
+.table > tbody > tr:first-child > th {
+  border-top: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+
+  color: #14D193;
+}
+
+.table > tbody > tr:last-child > td,
+.table > tbody > tr:last-child > th {
+  border-top: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+
+  color: #0B69FF;
+}
+
+.table > thead > tr > th {
+  border: none !important;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.tableSection {
+  box-shadow: 0 2px 10px #0000001a;
+  border-radius: 6px;
+  padding: 30px 32px;
+}
+
+.tableSection .copyBtns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #658cf2
+}
+
+.copyBtn.active {
+  cursor: pointer
+}
+
+.copyBtn.active:hover {
+  text-decoration: underline;
+  text-decoration-color: #574dfa
+}
+
+.copyBtn img {
+  transform: scale(.8);
+  border-radius: 6px;
+  box-shadow: 0 2px 10px #0000001a;
+  padding: 10px
+}
+
+
+
+.tableSection {
+  box-shadow: 0 2px 10px #0000001a;
+  border-radius: 6px;
+  padding: 30px 32px
+}
+
+.tableSection .copyBtns {
+  display: flex;
+  gap: .5rem
+}
+
+.tableSection .copyBtns > div {
+  min-width: 230px
+}
+
+.tableSection ._tableContainer_11jjx_264 {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 32px auto 0;
+  width: 90%
+}
+
+.tableSection ._table_11jjx_252 {
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px
+}
+
+.tableSection ._table_11jjx_252 > div {
+  display: flex;
+  flex-direction: row;
+  height: 32px
+}
+
+.tableSection ._table_11jjx_252 > div div {
+  border: .5px solid #cfcfcf;
+  min-width: 90px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-top: none;
+  border-bottom: none
+}
+
+.tableSection ._table_11jjx_252 > div div:first-of-type {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 12px;
+  min-width: 210px;
+  border-left: none;
+  font-size: 10px;
+  justify-content: flex-start;
+  background: #fafafa
+}
+
+.tableSection ._table_11jjx_252 > div div:last-of-type {
+  border-right: none
+}
+
+.tableSection ._table_11jjx_252 > div div._highlighted_11jjx_307 {
+  color: #fff;
+  background: #14d193 !important
+}
+
+.tableSection ._table_11jjx_252 > div:first-of-type {
+  text-transform: capitalize
+}
+
+.tableSection ._table_11jjx_252 > div:first-of-type div {
+  background: #fafafa;
+  border-top: none
+}
+
+.tableSection ._table_11jjx_252 > div:first-of-type div:first-of-type {
+  border-top-left-radius: 6px;
+  font-size: 12px
+}
+
+.tableSection ._table_11jjx_252 > div:first-of-type div:last-of-type {
+  border-top-right-radius: 6px
+}
+
+.tableSection ._table_11jjx_252 > div:last-of-type div {
+  border-bottom: none
+}
+
+.tableSection ._table_11jjx_252 > div:last-of-type div:first-of-type {
+  border-bottom-left-radius: 6px
+}
+
+.tableSection ._table_11jjx_252 > div:last-of-type div:last-of-type {
+  border-bottom-right-radius: 6px
+}
+
+.tableSection .table > div:nth-of-type(2) {
+  color: #14d193;
+  font-weight: 600
+}
+
+.tableSection .table > div:nth-of-type(3) {
+  color: #0b69ff;
+  font-weight: 600
+}
+
+@media screen and (max-width: 625px) {
+  .tableSection .copyBtns {
+    flex-direction: column
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tableSection {
+    padding: 2rem 1rem
+  }
+
+  .tableSection .tableContainer {
+    margin: 24px 0 0;
+    width: 100%
+  }
+}
+
+
+

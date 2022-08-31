@@ -1,0 +1,13 @@
+.aligntext {
+  margin-top: 20%;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  place-content: center;
+}

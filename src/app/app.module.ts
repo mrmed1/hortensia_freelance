@@ -22,6 +22,9 @@ import {ChartsModule} from "ng2-charts";
 import { RafinputsectionComponent } from './Pages/dashboard/rafinputsection/rafinputsection.component';
 import { SigmoidinputsectionComponent } from './Pages/dashboard/sigmoidinputsection/sigmoidinputsection.component';
 import { ChecksubscriptionComponent } from './Pages/dashboard/checksubscription/checksubscription.component';
+import { SettingsComponent } from './Pages/dashboard/MySettings/settings/settings.component';
+import { SubscriptionComponent } from './Pages/dashboard/MySettings/subscription/subscription.component';
+import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { ChecksubscriptionComponent } from './Pages/dashboard/checksubscription/
     RafinputsectionComponent,
     SigmoidinputsectionComponent,
     ChecksubscriptionComponent,
+    SettingsComponent,
+    SubscriptionComponent,
+    SidebarComponent,
 
 
   ],

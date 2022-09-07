@@ -8,30 +8,50 @@
     <form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.formGroup">
 
       <div class="form-group">
-        <label for="Email">Full Name</label>
+        <label >Full Name</label>
         <input class="form-control input-box icon" id="name"
                formControlName="Fullname"
                placeholder="&#xf007;  Enter your name"
-               type="text">
-
+               type="text"
+               [ngClass]="{'is-invalid':formService.Fullname&&formService.Fullname.errors && formService.Fullname.touched}">
+        <div *ngIf="formService.Fullname&&formService.Fullname.hasError('required')"
+             class="invalid-feedback">
+          FullName est Obligatoire*
+        </div>
       </div>
       <div class="form-group">
-        <label for="Email">Email</label>
-        <input aria-describedby="emailHelp" class="form-control input-box icon" id="Email"
-               formControlName="Email"
+        <label>Email</label>
+        <input class="form-control input-box icon"
                placeholder="&#xf0e0;  Enter your email"
-               type="email">
-
+               formControlName="Email"
+               type="email"
+               [ngClass]="{'is-invalid':formService.Email&&formService.Email.errors && formService.Email.touched}">
+        <div *ngIf="formService.Email&&formService.Email.hasError('required')"
+             class="invalid-feedback">
+          Email est Obligatoire*
+        </div>
+        <div *ngIf="formService.Email&&formService.Email.errors&& formService.Email.value"
+             class="invalid-feedback">
+          Verifier l'Email*
+        </div>
       </div>
       <div class="form-group">
         <label for="Password">Choose Password</label>
         <div class="inputContainer">
-          <input class="form-control input-box icon " id="Password" placeholder="&#xf023;  Minimum 8 characters"
+          <input class="form-control input-box icon" id="Password" name="Password"
+                 placeholder="&#xf023;  Enter password"
                  formControlName="Password"
-                 type="password">
-          <a class="inputImg" routerLink="/forget"><span class="forgetText">Forgot Password?</span></a>
+                 type="password"
+                 [ngClass]="{'is-invalid':formService.Password&&formService.Password.errors && formService.Password.touched}">
+          <div *ngIf="formService.Password&&formService.Password.hasError('required')"
+               class="invalid-feedback">
+            Mot de passe est Obligatoire*
+          </div>
+          <div *ngIf="formService.Password&&formService.Password.hasError('minlength')"
+               class="invalid-feedback">
+            Minimum 8 caractères*
+          </div>
         </div>
-
       </div>
 
       <button class="btn btn-primary loginbtn" type="submit">Start free 7-day trial</button>

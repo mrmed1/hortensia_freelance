@@ -1,9 +1,9 @@
-<form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.chartform">
+<form (ngSubmit)="onSubmit()" [formGroup]="formService.chartform" class="form">
 
-  <div class="inputsSection"  >
+  <div class="inputsSection">
     <h2>Information a renseigner</h2>
 
-    <div>
+    <div class="mb-3">
       <div class="d-flex flex-nowrap justify-content-between ">
         <label>Nombre de mois projet passé<img
           alt="Info" class="icon"
@@ -19,36 +19,38 @@
 
         </div>
       </div>
-
-      <input  placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text" >
+      <br>
+      <input class="mb-3" formControlName="nbOfMonthsPassed" placeholder="Entier naturel" type="text">
     </div>
 
     <h2>Paramétrage des courbes</h2>
-    <div>
-      <div class="forselect"><label >Réglage rapide :</label>
-        <div class="btn-group type rapids" role="group" >
-          <input autocomplete="off" class="btn-check" id="lineaire"  name="rapidSetting" >
+
+    <div class="mb-5">
+      <div class="forselect mb-5"><label>Réglage rapide :</label>
+        <div class="btn-group type rapids" role="group">
+          <input autocomplete="off" class="btn-check" id="lineaire" name="rapidSetting">
           <label class="btn btn-outline-primary fontradio justify-content-center" for="lineaire">~Linéaire</label>
 
-          <input autocomplete="off" checked class="btn-check"  id="classique"  name="rapidSetting" >
-          <label class="btn btn-outline-primary fontradio justify-content-center" for="classique">~S-Curve Classique</label>
+          <input autocomplete="off" checked class="btn-check" id="classique" name="rapidSetting">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="classique">~S-Curve
+            Classique</label>
 
         </div>
       </div>
-      <div><label>Tangentes aux extrémités (µ)</label></div>
-      <div><input max="10" min="0.1" step="0.01" type="range" value="5.49" id="tengente" (change)="rangeSlideTengente() ">
-        <span  id="TanValue">5.46</span>
+      <div>
+        <label>Tangentes aux extrémités (µ)</label></div>
+      <div><input (input)="changeTangente($event)" id="tengente" max="10" min="0.1" step="0.01" type="range"
+                  value="5.49">
+        <span id="TanValue">{{tangenteValue}}</span>
       </div>
     </div>
     <div>
-      <div><label>Décalage axe (σ)</label><select formControlName="sigAdjustor">
-        <option value="initial" selected>—</option>
-        <option value="fourty">40%</option>
-        <option value="fifty">50%</option>
-        <option value="sixty">60%</option>
-      </select></div>
-      <div><input max="15" min="-5" step="0.01" type="range" value="0" (change)="rangeSlideoffset()" id="offset"><span id="offsetValue">0</span></div>
+      <div><label>Décalage axe (σ)</label>
+      </div>
+      <div><input (input)="changeoffset($event)" id="offset" max="15" min="-5" step="0.01" type="range" value="0"><span
+        id="offsetValue">{{offsetValue}}</span></div>
     </div>
+
     <button type="submit">Date de fin et courbe prévisionnelle</button>
 
   </div>

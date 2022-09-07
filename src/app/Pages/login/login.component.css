@@ -11,3 +11,7 @@
   color: #FFFFFF;
   place-content: center;
 }
+
+.invalid-feedback{
+  margin-top: -20px;
+}

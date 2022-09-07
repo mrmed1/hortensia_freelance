@@ -25,6 +25,7 @@ import { ChecksubscriptionComponent } from './Pages/dashboard/checksubscription/
 import { SettingsComponent } from './Pages/dashboard/MySettings/settings/settings.component';
 import { SubscriptionComponent } from './Pages/dashboard/MySettings/subscription/subscription.component';
 import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.component';
+import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.c
     SettingsComponent,
     SubscriptionComponent,
     SidebarComponent,
+    ResetpasswordComponent,
 
 
   ],

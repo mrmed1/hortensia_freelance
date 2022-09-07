@@ -55,17 +55,12 @@
         </div>
       </div>
       <div><label>Tangentes aux extrémités (µ)</label></div>
-      <div><input max="10" min="0.1" step="0.01" type="range" value="5.49" id="tengente" (change)="rangeSlideTengente() ">
-        <span  id="TanValue">5.46</span></div>
+      <div><input max="10" min="0.1" step="0.01" type="range" (input)="changeTangente($event)"  value="5.49" id="tengente">
+        <span  id="TanValue">{{tangenteValue}}</span></div>
     </div>
     <div>
-      <div><label>Décalage axe (σ)</label><select formControlName="sigAdjustor" >
-        <option value="initial" selected>—</option>
-        <option value="fourty">40%</option>
-        <option value="fifty">50%</option>
-        <option value="sixty">60%</option>
-      </select></div>
-      <div><input max="15" min="-5" step="0.01" type="range" value="0.33" (change)="rangeSlideoffset()" id="offset"><span id="offsetValue">0.33</span></div>
+      <div><label>Décalage axe (σ)</label></div>
+      <div><input max="15" min="-5" step="0.01" type="range" value="0.33" (input)="changeoffset($event)"  id="offset"><span id="offsetValue">{{offsetValue}}</span></div>
     </div>
     <button type="submit">Date de fin et courbe prévisionnelle</button>
 

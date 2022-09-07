@@ -24,9 +24,13 @@ export class ForgetpasswordComponent implements OnInit {
   }
 
   submit() {
-    const body = {email : this.mail , type:"rest-password"}
+    const body = {email : this.mail , type:"reset-password"}
+    localStorage.setItem("type_token","reset-password")
     this.webRequest.post("auth/send-otp",body).subscribe(
-      data => this.tokenStorage.saveOtpToken(data.body["otp_token"]),
+      data => {
+        this.tokenStorage.saveOtpToken(data.body["otp_token"])
+        this.router.navigateByUrl("/verify")
+      },
       error => console.error(error)
     )
   }

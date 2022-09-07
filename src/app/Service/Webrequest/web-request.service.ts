@@ -9,7 +9,7 @@ export class WebRequestService {
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
-    this.ROOT_URL = 'http://localhost:5000/api';
+    this.ROOT_URL = 'https://street-stars.vip/project-curve/api';
   }
 
 

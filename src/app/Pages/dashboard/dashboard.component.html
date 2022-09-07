@@ -6,16 +6,16 @@
     </div>
     <div class="col-4 d-flex mt-5 ">
 
-
       <span class="me-4">Simulation</span>
-      <button class=" btn btn-outline-primary firstbtn simulationbtn"><span class="font">Nouvelle simulation</span>
+      <button class=" btn btn-outline-primary firstbtn simulationbtn" data-bs-target="#saveModal"
+              data-bs-toggle="modal"><span class="font">Nouvelle simulation</span>
         <svg fill="none" height="10" viewBox="0 0 13 10" width="13" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M12.4375 4.6875L9.70625 8.5375C9.475 8.8625 9.09375 9.0625 8.6875 9.0625H6.8125V5.3125H4.9375V3.4375H1.1875V1.5625C1.1875 0.875 1.75 0.3125 2.4375 0.3125H8.6875C9.09375 0.3125 9.475 0.50625 9.70625 0.8375L12.4375 4.6875ZM5.5625 6.5625H3.6875V4.6875H2.4375V6.5625H0.5625V7.8125H2.4375V9.6875H3.6875V7.8125H5.5625V6.5625Z"
             fill="#0B69FF"/>
         </svg>
       </button>
-      <button class="btn btn-outline-primary simulationbtn mid" data-bs-target="#deleteModal"
+      <button class="btn btn-outline-primary simulationbtn mid" data-bs-target="#openModal" (click)="getSimulationByUser()"
               data-bs-toggle="modal"><span class="font">ouvrir une simulation</span>
         <svg fill="none" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -69,7 +69,7 @@
                   </div>
                 </a>
               </li>
-              <li><a class="dropdown-item" href="#">
+              <li><a class="dropdown-item" routerLink="">
                 <div class="forspacing">
                   <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -88,6 +88,7 @@
 
         </div>
       </div>
+
     </div>
 
   </div>
@@ -142,22 +143,22 @@
         <div class="copyBtn active"><img alt="Copier" src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
         </div>
       </div>
-      <table class="table table-bordered table-striped">
-        <thead >
+      <table #dataTable class="tablestat bordered " >
+        <thead>
         <tr>
           <th>Date</th>
-          <th *ngFor="let mois of dataTable[0]">{{mois}}</th>
+          <th *ngFor="let mois of Table[0]">Mois {{mois}}</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="x">
-          <th>Pourcentage d’avacement par mois</th>
-          <td *ngFor="let avancemois of dataTable [2]">{{avancemois}}</td>
+        <tr>
+          <th class="border-bottom-0">Pourcentage d’avacement par mois</th>
+          <td *ngFor="let avancemois of Table[2]">{{avancemois}}</td>
 
         </tr>
         <tr>
-          <th>Pourcentage d’avacement cumulé</th>
-          <td *ngFor="let avancecumule of dataTable [1]">{{avancecumule}}</td>
+          <th class="border-bottom-0">Pourcentage d’avacement cumulé</th>
+          <td *ngFor="let avancecumule of Table[1]">{{avancecumule}}</td>
         </tr>
 
         </tbody>
@@ -178,12 +179,12 @@
           <form class="form mt-4 ">
             <div class="form-group d-flex flex-column gap-3">
               <label for="Nom">Nom</label>
-              <input class="form-control input-box " id="Nom" placeholder="Nom de la simulation" type="text">
+              <input class="form-control input-box" [(ngModel)]="simulationName"  id="Nom" placeholder="Nom de la simulation" type="text" [ngModelOptions]="{standalone: true}">
 
             </div>
 
 
-            <button class="btn btn-primary loginbtn mt-4" type="submit">Save</button>
+            <button class="btn btn-primary loginbtn mt-4" (click)="saveSimulation()"  type="submit">Save</button>
           </form>
 
 
@@ -205,7 +206,7 @@
         <div class="row"><h1 class="title">ouvrir une simulation</h1></div>
         <div class="row"><input class="searchinput" placeholder="&#xf002;" type="text"></div>
 
-        <table class="row-border " id="example" style="width:100%">
+        <table class="bordered w-100 mt-3 display" id="example">
 
           <thead>
           <tr class="brd">

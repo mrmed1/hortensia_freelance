@@ -49,3 +49,44 @@ p {
 
   color: #B9BEC7;
 }
+
+@media screen and (max-width: 480px) {
+  .textbtn {
+    margin-top: 60px;
+  }
+
+  .signupdiv {
+
+    display: -webkit-box;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+  }
+
+}
+@media screen and (max-width: 375px) {
+  .textbtn {
+    bottom: 0;
+    right: 0;
+    top: auto;
+    padding: 0;
+  }
+
+  .signupdiv {
+    margin-top: 20px;
+    display: -webkit-box;
+
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    position: absolute;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+
+  }
+
+}

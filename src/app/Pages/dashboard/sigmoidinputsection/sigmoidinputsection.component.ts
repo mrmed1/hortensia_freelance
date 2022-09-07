@@ -8,40 +8,33 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./sigmoidinputsection.component.css']
 })
 export class SigmoidinputsectionComponent implements OnInit {
-  constructor(public formService: FormService) { }
 
   @Output() sendDataEvent = new EventEmitter<any>();
+  offsetValue = 0.33;
+  tangenteValue= 5.46;
+
+
+  constructor(public formService: FormService) { }
+
   ngOnInit(): void {
-    this.rangeSlideTengente();
-    this.rangeSlideoffset();
   }
 
   onSubmit() {
 
     let tabledata = {
       "numbermonth": this.formService.nbOfMonthsPassed.value,
-      "tangente": $('#TanValue').text(),
-      "offset": $('#offsetValue').text()
+      "tangente": this.tangenteValue,
+      "offset": this.offsetValue
     }
 
     this.sendDataEvent.emit(tabledata);
   }
-
-
-  rangeSlideTengente() {
-
-    $('#tengente').on('change input', function() {
-      $('#TanValue').text($('#tengente').val());
-
-    })
-
+  changeoffset(e) {
+    this.offsetValue = e.target.value;
   }
 
-  rangeSlideoffset() {
-    $('#offset').on('change input', function() {
-      $('#offsetValue').text($('#offset').val());
-
-    })
+  changeTangente(e) {
+    this.tangenteValue = e.target.value;
   }
 }
 

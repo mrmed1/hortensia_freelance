@@ -40,9 +40,10 @@ label {
 }
 
 .logindiv {
+  min-width: 400px;
   position: absolute;
   width: 476px;
-  height: 380px;
+  height: 429px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -178,16 +179,25 @@ input {
   order: 0;
   flex-grow: 0;
 }
-
+.dataTables_wrapper {
+  position: relative;
+  clear: both;
+  width: 90% !important;
+  margin-top: 30px;
+}
 
 
 .inputContainer {
   position: relative;
 }
 
+.invalid-feedback{
+  margin-top: -20px;
+}
+
 .inputImg {
   right: 0;
-  margin-right: 7px;
+  margin-right: 23px;
   position: absolute;
   top: 3px;
 

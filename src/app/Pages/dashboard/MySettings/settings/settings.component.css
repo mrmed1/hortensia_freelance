@@ -1,0 +1,66 @@
+
+@import "../../../../../assets/css/settings.css";
+form .form-control,form .form-control:focus{
+  border-color:transparent;
+  border-bottom-color: #bebcc1;
+  box-shadow:none;
+}
+
+.select_input {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  color: #3B3663;
+
+  width: 312px;
+  height: 40px;
+
+  /* General/White */
+
+  background: #FFFFFF;
+  /* Light Grey/100 */
+
+  border: 1px solid #D7DFE9;
+  border-radius: 4px;
+}
+
+ label {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600 !important;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+
+  /* black */
+
+  color: #3B3663;
+}
+
+.savebtn {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+
+  width: 187px;
+  height: 56px;
+
+
+  /* blue */
+
+  background: #0B69FF;
+  /* General/Flash Planning Blue */
+
+  border: 1px solid #0AB4FF;
+  border-radius: 4px;
+}

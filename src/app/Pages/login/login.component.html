@@ -6,27 +6,45 @@
   <div class="container">
 
 
-    <form class="form">
+    <form class="form"  [formGroup]="formService.formGroup">
       <div class="form-group">
-        <label for="Email">Email</label>
-        <input aria-describedby="emailHelp" class="form-control input-box icon" id="Email"
+        <label>Email</label>
+        <input class="form-control input-box icon"
                placeholder="&#xf0e0;  Enter your email"
-               [(ngModel)]="mail"
-               name="Email"
-               type="email">
-
+               formControlName="Email"
+               type="email"
+               [ngClass]="{'is-invalid':formService.Email&& formService.Email.touched&&formService.Email.value==''}">
+        <div *ngIf="formService.Email&&formService.Email.value==''"
+             class="invalid-feedback">
+          veuillez saisir votre Email*
+        </div>
       </div>
-      <div class="form-group">
+      <div class="form-group  mb-3">
         <label for="Password">Password</label>
         <div class="inputContainer">
-          <input class="form-control input-box icon " id="Password" [(ngModel)]="mdp" name="Password" placeholder="&#xf023;  Enter password"
-                 type="password">
+          <input class="form-control input-box icon" id="Password" name="Password"
+                 placeholder="&#xf023;  Enter password"
+                 formControlName="Password"
+                 type="password"
+                 [ngClass]="{'is-invalid':formService.Password&&formService.Password.touched&&formService.Password.value==''}">
           <a class="inputImg" href="forget"><span class="forgetText">Forgot Password?</span></a>
+        <div *ngIf="formService.Password&&formService.Password.value==''"
+             class="invalid-feedback">
+          Mot de passe est Obligatoire*
         </div>
-
+        </div>
       </div>
-
-      <button class="btn btn-primary loginbtn" type="submit" (click)="submit()">Log In</button>
+   <div class="d-flex flex-column gap-2">
+        <button (click)="submit()" class="btn btn-primary loginbtn" type="submit">Log In</button>
+        <button (click)="submit()" class="btn btn-primary loginbtn" type="submit">
+          <svg fill="none" height="28" viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M27.0741 11.3887H26.0001V11.3334H14.0001V16.6667H21.5354C20.4361 19.7714 17.4821 22.0001 14.0001 22.0001C9.58208 22.0001 6.00008 18.4181 6.00008 14.0001C6.00008 9.58208 9.58208 6.00008 14.0001 6.00008C16.0394 6.00008 17.8947 6.76941 19.3074 8.02608L23.0787 4.25475C20.6974 2.03541 17.5121 0.666748 14.0001 0.666748C6.63675 0.666748 0.666748 6.63675 0.666748 14.0001C0.666748 21.3634 6.63675 27.3334 14.0001 27.3334C21.3634 27.3334 27.3334 21.3634 27.3334 14.0001C27.3334 13.1061 27.2414 12.2334 27.0741 11.3887Z"
+              fill="white"/>
+          </svg>
+          Login with google
+        </button>
+      </div>
     </form>
   </div>
   <div>

@@ -1,0 +1,117 @@
+.sidenav {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 250px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+
+  background: #F9F9F9;
+  /* Grey/4 */
+
+  border-right: 1px solid rgba(126, 133, 142, 0.04);
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.back-button {
+  position: absolute;
+  width: 76px;
+  height: 26px;
+  left: 40px;
+  top: 60px;
+
+  /* blue */
+
+  background: #0B69FF;
+  border-radius: 20px;
+}
+
+.back-txt {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  text-transform: uppercase;
+
+  /* white */
+
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: -3px;
+}
+.settitle {
+
+  position: absolute;
+  width: 100px;
+  height: 32px;
+  left: 41px;
+  top: 121px;
+
+  /* Product - H2 ∙ 24|32 / Medium */
+
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+
+  /* black */
+
+  color: #3B3663;
+
+}
+
+.lien {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 27px;
+
+  position: absolute;
+  width: 150px;
+  height: 115px;
+  left: 41px;
+  top: 201px;
+
+}
+.sidenav a:hover {
+  color: #0B69FF;
+}
+.lienactive {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height, or 120% */
+
+
+  /* blue */
+
+  color: #0B69FF;
+}

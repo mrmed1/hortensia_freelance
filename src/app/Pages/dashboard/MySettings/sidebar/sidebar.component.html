@@ -1,0 +1,10 @@
+<div class="sidenav d-grid flex-column">
+  <button class="btn btn-primary back-button" type="button" routerLink="/dashboard"><span class="back-txt">< BACK</span></button>
+
+  <span class="settitle">Settings</span>
+  <div class="lien">
+    <a  routerLink="/settings"><span [ngClass]="x === '/settings' ? 'lienactive':'lientext'" class="lientext">Settings</span></a>
+    <a  routerLink="/subscription"><span [ngClass]="x === '/subscription' ? 'lienactive':'lientext'">Subscription</span></a>
+  </div>
+
+</div>

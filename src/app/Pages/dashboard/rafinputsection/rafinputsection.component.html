@@ -55,12 +55,12 @@
         </div>
       </div>
       <div><label>Tangentes aux extrémités (µ)</label></div>
-      <div><input max="10" min="0.1" step="0.01" type="range" (input)="changeTangente($event)"  value="5.49" id="tengente">
-        <span  id="TanValue">{{tangenteValue}}</span></div>
+      <div><p>0.1</p><input max="5" min="0.1" step="0.01" type="range" (input)="changeTangente($event)"  value="3.22" id="tengente">
+        <p  id="TanValue">{{tangenteValue}}</p></div>
     </div>
     <div>
       <div><label>Décalage axe (σ)</label></div>
-      <div><input max="15" min="-5" step="0.01" type="range" value="0.33" (input)="changeoffset($event)"  id="offset"><span id="offsetValue">{{offsetValue}}</span></div>
+      <div><p>-5</p><input max="10" min="-5" step="0.01" type="range" value="0.33" (input)="changeoffset($event)"  id="offset"><p id="offsetValue">{{offsetValue}}</p></div>
     </div>
     <button type="submit">Date de fin et courbe prévisionnelle</button>
 

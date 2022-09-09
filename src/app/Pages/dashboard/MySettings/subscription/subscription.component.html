@@ -62,9 +62,9 @@
 
     </div>
 
-    <div class="">
+    <div style="padding: 50px">
       <span class="invoicetxt">Invoices are generated every Month</span>
-      <button type="button" class="btn btn-primary downloadinvoice">Download last invoice</button>
+      <button type="button" class="btn btn-primary downloadinvoice" >Download last invoice</button>
       <br><br><br>
       <table class="table table-borderless pricing">
         <thead>
@@ -80,7 +80,7 @@
           <td>{{subscription["invoice_number"] }}</td>
           <td>{{subscription["period_start"] * 1000 | date: 'dd/MM/yyyy'}}</td>
           <td>{{subscription["amount_paid"]}}$</td>
-          <td style="cursor: pointer">
+          <td style="cursor: pointer" (click)="download(subscription['invoice_url'])">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2.91675 11.9582H11.0834V10.7915H2.91675V11.9582ZM11.0834 5.5415H8.75008V2.0415H5.25008V5.5415H2.91675L7.00008 9.62484L11.0834 5.5415Z"

@@ -22,7 +22,7 @@ export class FormService {
     nbOfMonthsPassed: ['', Validators.required],
     donePercentage: ['', Validators.required],
     rapidSetting: ['', Validators.required],
-    mu: ['5.46', Validators.required],
+    mu: ['3.22', Validators.required],
     sig: ['0.33', Validators.required],
     sigAdjustor: ['', Validators.required],
     selectjourmois: ['', Validators.required],

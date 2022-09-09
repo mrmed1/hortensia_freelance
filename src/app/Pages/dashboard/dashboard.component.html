@@ -117,7 +117,9 @@
         <app-sigmoidinputsection (sendDataEvent)="receiveMessage($event)"
                                  *ngIf="inputProj == 'sigmoid'"></app-sigmoidinputsection>
       </div>
+
       <div class="chartSection">
+
         <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copy chart (PNG)</span>
         </div>
         <div class="pcurveChart" id="ps-curve-chart">
@@ -167,17 +169,17 @@
         </tbody>
       </table>
     </div>-->
-    <div class="_tableSection_11jjx_252">
+    <div class="_tableSection_11jjx_252" >
       <div class="_copyBtns_11jjx_257">
-        <div class="copyBtn active"><img alt="Copier"
+        <div class="copyBtn active" ><img alt="Copier"
                                          src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
         </div>
-        <div class="copyBtn active"><img alt="Copier"
+        <div class="copyBtn active"  id="copy" (click)="copyTable()"><img alt="Copier"
                                          src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
         </div>
       </div>
       <div class="_tableContainer_11jjx_264">
-        <table class="_table_11jjx_252">
+        <table class="_table_11jjx_252" id="table" #dataTable>
           <div>
             <div>Date</div>
             <div *ngFor="let mois of Tablemonth"> {{mois}}</div>

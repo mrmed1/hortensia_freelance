@@ -27,7 +27,7 @@ import { SubscriptionComponent } from './Pages/dashboard/MySettings/subscription
 import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.component';
 import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
 import { TokenInterceptor } from './Service/Security/Interceptor/token.interceptor';
-
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -62,6 +62,7 @@ import { TokenInterceptor } from './Service/Security/Interceptor/token.intercept
     NgApexchartsModule,
     MatSnackBarModule,
     ChartsModule,
+    ClipboardModule
 
 
   ],

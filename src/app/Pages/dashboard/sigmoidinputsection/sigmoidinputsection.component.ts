@@ -11,7 +11,7 @@ export class SigmoidinputsectionComponent implements OnInit {
 
   @Output() sendDataEvent = new EventEmitter<any>();
   offsetValue = 0.33;
-  tangenteValue= 5.46;
+  tangenteValue= 3.22;
 
 
   constructor(public formService: FormService) { }

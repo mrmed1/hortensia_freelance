@@ -9,7 +9,7 @@ import * as $ from 'jquery'
 })
 export class RafinputsectionComponent implements OnInit {
   offsetValue = 0.33;
-  tangenteValue= 5.46;
+  tangenteValue= 3.22;
   constructor(public formService: FormService) { }
 
   ngOnInit(): void {

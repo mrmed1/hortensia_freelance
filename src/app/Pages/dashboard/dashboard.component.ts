@@ -16,21 +16,22 @@ declare var $;
 export class DashboardComponent implements OnInit, AfterViewInit {
   inputProj: string = 'raf'
   @ViewChild('dataTable', {static: false}) table;
+  @ViewChild('table', {static: false}) tablehtml;
   tabletodisplayrafmoids = [];
   dataTable: any;
   tableparent = []
-  Table = [['-','-','-','-','-','-','-','-'],['-','-','-','-','-','-','-','-'],['-','-','-','-','-','-','-','-']]
-  Tablemonth: string[] = ['-','-','-','-','-','-','-','-'];
+  Table = [['-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-', '-', '-']]
+  Tablemonth: string[] = ['-', '-', '-', '-', '-', '-', '-', '-'];
   simulationName: string;
-  rafmoidtodelete ="";
+  rafmoidtodelete = "";
 
 
   constructor(private renderer: Renderer2,
               public formService: FormService,
               private tokenstorage: TokenstorageService,
-              private webRequest:WebRequestService,
-              private notificationService : NotificationService,
-              private router:Router) {
+              private webRequest: WebRequestService,
+              private notificationService: NotificationService,
+              private router: Router) {
     this.renderer.setStyle(document.body, 'background',
       'none');
 
@@ -45,7 +46,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     //   searching: false,
     //
     // });
-
+    this.dataTable = $(this.tablehtml.nativeElement);
 
   }
 
@@ -57,14 +58,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
 
 
-
   }
 
 
   receiveDataTable($event: any) {
     this.Table = $event;
     console.log(this.Table)
-  this.Tablemonth = [];
+    this.Tablemonth = [];
     console.log(this.Table[0])
     this.Table[0].forEach(x => this.Tablemonth.push("Mois" + x))
     console.log(this.Tablemonth)
@@ -74,8 +74,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   saveSimulation() {
     //if user in raf section
-    if (this.inputProj == "raf")
-    {
+    if (this.inputProj == "raf") {
       console.log("raf")
     } else
       //if user in sigmoids section
@@ -86,7 +85,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         "offset": this.formService.sig.value,
         "month_count": this.formService.nbOfMonthsPassed.value
       }
-      this.webRequest.post("sigmoids",body).subscribe(
+      this.webRequest.post("sigmoids", body).subscribe(
         data => console.log(data),
         error => console.error(error)
       )
@@ -101,7 +100,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       data => {
         this.tabletodisplayrafmoids.push(data["sigmoids"])
         this.tabletodisplayrafmoids.push(data["rafs"])
-        setTimeout(()=>{
+        setTimeout(() => {
           $('#openbtn').prop('disabled', true)
 
           var table = $('#datatable').DataTable({
@@ -111,9 +110,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
             searching: true,
             dom: 't'         // This shows just the table
           });
-          $('#searchinput').on( 'keyup', function () {
-            table.search( this.value ).draw();
-          } );
+          $('#searchinput').on('keyup', function () {
+            table.search(this.value).draw();
+          });
 
           $('#datatable tbody').on('click', 'tr', function () {
             if ($(this).hasClass('selected')) {
@@ -136,30 +135,28 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   }
 
-  saveid(id,title) {
+  saveid(id, title) {
 
-    localStorage.setItem("rafmoid_id",id);
-    localStorage.setItem("rafmoid_title",title);
+    localStorage.setItem("rafmoid_id", id);
+    localStorage.setItem("rafmoid_title", title);
   }
 
   deleterafmoids() {
 
 
-    if (this.rafmoidtodelete === localStorage.getItem("rafmoid_title"))
-    {
-      this.webRequest.delete("sigmoids/"+localStorage.getItem("rafmoid_id")).subscribe(
+    if (this.rafmoidtodelete === localStorage.getItem("rafmoid_title")) {
+      this.webRequest.delete("sigmoids/" + localStorage.getItem("rafmoid_id")).subscribe(
         data => {
           this.notificationService.success("la suppression est effectué avec succès")
           this.router.navigateByUrl("dashboard")
         },
         error => console.log(error)
-
       )
     }
   }
 
   openSimulation() {
-    this.webRequest.get("sigmoids/"+localStorage.getItem("rafmoid_id")).subscribe(
+    this.webRequest.get("sigmoids/" + localStorage.getItem("rafmoid_id")).subscribe(
       data => {
         console.log(data)
         this.formService.mu.patchValue(data["tangent"])
@@ -170,7 +167,27 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
       },
       error => console.log(error)
-
     )
   }
+
+
+  selectNode(node) {
+    let range = document.createRange();
+    range.selectNodeContents(node)
+    let select = window.getSelection()
+    select.removeAllRanges()
+    select.addRange(range)
+  }
+
+
+  copyTable() {
+    var table = document.getElementById('table');
+
+    if (navigator.clipboard) {
+      var text = table.innerText.trim();
+      navigator.clipboard.writeText(text).catch(function () {
+      });
+    }
+  }
+
 }

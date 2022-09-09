@@ -78,10 +78,22 @@ export class GraphComponent implements OnInit {
       "display": false,
     },
     "scales": {
-      "yAxes": [{
-        "ticks": {
-          "beginAtZero": true
-        }
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        },
+        id: 'b',
+        type: 'linear',
+
+        position: 'left',
+      }, { ticks: {
+          beginAtZero: true
+        },
+        id: 'a',
+        type: 'linear',
+        "beginAtZero": true,
+        position: 'right',
+
       }],
       "xAxes": [{
         "ticks": {
@@ -89,16 +101,6 @@ export class GraphComponent implements OnInit {
           "max": "Sunday",
         }
       }],
-      linelabels : {
-        "beginAtZero": true,
-        "type" : 'linear',
-        "position":"right"
-      },
-      barlabels : {
-        "beginAtZero": true,
-        "type" : 'linear',
-        "position":"left"
-      },
     }
   }
   canvas: any;
@@ -117,23 +119,23 @@ export class GraphComponent implements OnInit {
       data: {
         datasets: [{
           label: 'Line Dataset',
-          data: tab1,
+          data: tab2,
           type: 'line',
           borderColor: '#0B69FF',
           fill:'0B69FF',
           // this dataset is drawn on top
           order: 1,
-          yAxisID:'linelabels'
+          yAxisID:"a"
         },
           {
           label: 'Bar Dataset',
-          data: tab2,
+          data: tab1,
           borderColor: 'white',
           backgroundColor: '#14D193',
           fill:'0B69FF',
           // this dataset is drawn below
           order: 2,
-            yAxisID:'barlabels'
+            yAxisID:"b"
         }],
         labels: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet","Aout", "September", "October", "November", "December"]
       },

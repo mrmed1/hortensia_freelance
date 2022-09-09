@@ -10,19 +10,27 @@ import {WebRequestService} from "../../../../Service/Webrequest/web-request.serv
 })
 export class SubscriptionComponent implements OnInit {
   tableSubscription = []
+
   constructor(private renderer: Renderer2,
-             private  webRequest : WebRequestService) {
+              private webRequest: WebRequestService,
+              private router: Router) {
     this.renderer.setStyle(document.body, 'background',
       'none');
   }
+
   ngOnInit(): void {
     this.webRequest.get("subscriptions").subscribe(
       data => {
         this.tableSubscription.push(data)
-        console.log(data[0]["description"])
+        console.log(data[0])
       },
       error => console.error(error)
     )
+  }
+
+  download(e) {
+
+    window.open(e)
   }
 
 }

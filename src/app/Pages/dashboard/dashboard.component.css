@@ -638,4 +638,6 @@ table.dataTable.no-footer {
   border-right: 2px solid #bdbdbd;
 }
 
-
+.input-box {
+  padding: 10px;
+}

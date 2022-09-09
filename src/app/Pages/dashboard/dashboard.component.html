@@ -6,7 +6,7 @@
     </div>
     <div class="col-4 d-flex mt-5 ">
 
-      <span class="me-4">Simulation</span>
+
       <button class=" btn btn-outline-primary firstbtn simulationbtn" data-bs-target="#saveModal"
               data-bs-toggle="modal"><span class="font">Nouvelle simulation</span>
         <svg fill="none" height="10" viewBox="0 0 13 10" width="13" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,8 @@
             fill="#0B69FF"/>
         </svg>
       </button>
-      <button class="btn btn-outline-primary simulationbtn mid" data-bs-target="#openModal" (click)="getSimulationByUser()"
+      <button class="btn btn-outline-primary simulationbtn mid" data-bs-target="#openModal"
+              (click)="getSimulationByUser()"
               data-bs-toggle="modal"><span class="font">ouvrir une simulation</span>
         <svg fill="none" height="12" viewBox="0 0 13 12" width="13" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -136,14 +137,16 @@
 
 
     </div>
-    <div class="tableSection">
+<!--    <div class="tableSection">
       <div class="copyBtns">
-        <div class="copyBtn active"><img alt="Copier" src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
+        <div class="copyBtn active"><img alt="Copier"
+                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
         </div>
-        <div class="copyBtn active"><img alt="Copier" src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
+        <div class="copyBtn active"><img alt="Copier"
+                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
         </div>
       </div>
-      <table #dataTable class="tablestat bordered " >
+      <table #dataTable class="tablestat bordered ">
         <thead>
         <tr>
           <th>Date</th>
@@ -163,6 +166,35 @@
 
         </tbody>
       </table>
+    </div>-->
+    <div class="_tableSection_11jjx_252">
+      <div class="_copyBtns_11jjx_257">
+        <div class="copyBtn active"><img alt="Copier"
+                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
+        </div>
+        <div class="copyBtn active"><img alt="Copier"
+                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
+        </div>
+      </div>
+      <div class="_tableContainer_11jjx_264">
+        <table class="_table_11jjx_252">
+          <div>
+            <div>Date</div>
+            <div *ngFor="let mois of Tablemonth"> {{mois}}</div>
+
+          </div>
+          <div>
+            <div>Percentage of progress per month</div>
+            <div *ngFor="let avancemois of Table[2]">{{avancemois}}</div>
+
+          </div>
+          <div>
+            <div>Percentage of cumulative progress</div>
+            <div *ngFor="let avancecumule of Table[1]">{{avancecumule}}</div>
+
+          </div>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -179,12 +211,13 @@
           <form class="form mt-4 ">
             <div class="form-group d-flex flex-column gap-3">
               <label for="Nom">Nom</label>
-              <input class="form-control input-box" [(ngModel)]="simulationName"  id="Nom" placeholder="Nom de la simulation" type="text" [ngModelOptions]="{standalone: true}">
+              <input class="form-control input-box" [(ngModel)]="simulationName" id="Nom"
+                     placeholder="Nom de la simulation" type="text" [ngModelOptions]="{standalone: true}">
 
             </div>
 
 
-            <button class="btn btn-primary loginbtn mt-4" (click)="saveSimulation()"  type="submit">Save</button>
+            <button class="btn btn-primary loginbtn mt-4" (click)="saveSimulation()" type="submit">Save</button>
           </form>
 
 
@@ -204,7 +237,8 @@
 
       <div class="openmodal">
         <div class="row"><h1 class="title">ouvrir une simulation</h1></div>
-        <div class="row"><input class="searchinput" #tableSimulation id="searchinput" placeholder="&#xf002;" type="text"></div>
+        <div class="row"><input class="searchinput" #tableSimulation id="searchinput" placeholder="&#xf002;"
+                                type="text"></div>
 
         <table class="bordered w-100 mt-3 display" #dataTable id="datatable">
 
@@ -218,9 +252,9 @@
           </thead>
 
 
-          <tbody  *ngFor="let data of tabletodisplayrafmoids[0]">
+          <tbody>
 
-          <tr>
+          <tr *ngFor="let data of tabletodisplayrafmoids[0]" (click)="saveid(data['_id']['$oid'],data['title'])">
             <td>
               <div class="d-flex gap-3">
                 <svg fill="none" height="20" viewBox="0 0 16 20" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -233,8 +267,9 @@
               </div>
             </td>
             <td>Sigmoids</td>
-            <td>09/09/20222</td>
-            <td>
+            <td>09/09/2022</td>
+            <td data-bs-target="#deleteModal"
+                data-bs-toggle="modal" (click)="saveid(data['_id']['$oid'],data['title'])">
               <svg fill="none" height="24" viewBox="0 0 18 24" width="18" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M1.5 20.75C1.5 22.125 2.625 23.25 4 23.25H14C15.375 23.25 16.5 22.125 16.5 20.75V5.75H1.5V20.75ZM4 8.25H14V20.75H4V8.25ZM13.375 2L12.125 0.75H5.875L4.625 2H0.25V4.5H17.75V2H13.375Z"
@@ -249,7 +284,8 @@
 
         </table>
 
-        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit" id="openbtn"><span>Ouvrir</span>
+        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit" id="openbtn" (click)="openSimulation()">
+          <span>Ouvrir</span>
         </button>
 
       </div>
@@ -269,14 +305,16 @@
         <div class="row"><h1 class="title">Etes-vous sûr ?</h1></div>
         <form class=" mt-4 ">
           <div class="form-group d-flex flex-column gap-3">
-            <label for="nomsimulation">Pour validé tapé le nom de fichier</label>
-            <div class="row"><input class="form-control input-box suppinput " id="nomsimulation"
+
+            <label>Pour validé tapé le nom de fichier</label>
+            <div class="row"><input class="form-control input-box suppinput " [ngModelOptions]="{standalone: true}" [(ngModel)]="rafmoidtodelete"
                                     placeholder="Nom de la simulation" type="text"></div>
           </div>
           <div class="d-flex gap-3">
             <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit"><span>Annuler</span>
             </button>
-            <button class="btn btn-danger modalbtn mt-4" type="submit"><span>Supprimer</span></button>
+            <button class="btn btn-danger modalbtn mt-4" type="submit" (click)="deleterafmoids()"><span>Supprimer</span>
+            </button>
           </div>
         </form>
 

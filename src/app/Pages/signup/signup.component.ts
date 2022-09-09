@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.formService.formGroup.valid) {
+
       this.user.full_name = this.formService.Fullname.value;
       this.user.email = this.formService.Email.value;
       this.user.password = this.formService.Password.value;
@@ -47,6 +47,6 @@ export class SignupComponent implements OnInit {
         }
       )
 
-    }
+
   }
 }

@@ -19,7 +19,12 @@
   padding: 7px 12px;
   gap: 10px;
 }
-
+.subcription svg {
+  position: absolute;
+  right: 0;
+  margin-right: 25px;
+  cursor: pointer;
+}
 .checkbtnameliorer {
 
   height: 26px;

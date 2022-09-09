@@ -6,31 +6,48 @@
 
     <div class="container">
 
-      <form class="ms-5">
+      <form class="ms-5" [formGroup]="formService.formGroup" (ngSubmit)="submit()">
 
         <div class="form-group">
 
           <label for=fullName>Full Name</label>
-          <input class="form-control" id="fullName" type="text">
+          <input class="form-control" id="fullName" formControlName="Fullname" type="text">
 
         </div>
         <div class="form-group">
 
           <label for=currentpassword>Current Password</label>
-          <input class="form-control" id="currentpassword" placeholder="Enter Current Password" type="password">
+          <input class="form-control" id="currentpassword" placeholder="Enter Current Password"
+                 formControlName="CurrentPassword" type="password">
 
         </div>
         <div class="form-group">
 
           <label>Password</label>
-          <input class="form-control" placeholder="Enter New Password" type="password">
-
+          <input class="form-control" placeholder="Enter New Password" formControlName="Password" type="password"
+                 [ngClass]="{'is-invalid':formService.Password&&formService.Password.errors && formService.Password.touched}">
+          <div *ngIf="formService.Password&&formService.Password.hasError('required')"
+               class="invalid-feedback">
+            Mot de passe est Obligatoire*
+          </div>
+          <div *ngIf="formService.Password&&formService.Password.hasError('passwordMismatch')"
+               class="invalid-feedback resize_font" >
+            Mot de Passe Incorrect*
+          </div>
         </div>
         <div class="form-group ">
 
           <label>Repeat Password</label>
-          <input class="form-control" placeholder="Repeat  Password" type="password">
-
+          <input class="form-control" placeholder="Repeat  Password" formControlName="ConfirmPassword" type="password"
+                 [ngClass]="{'is-invalid':formService.ConfirmPassword&&formService.ConfirmPassword.errors && formService.ConfirmPassword.touched}">
+          <div *ngIf="formService.ConfirmPassword&&formService.ConfirmPassword.hasError('required')"
+               class="invalid-feedback">
+            Mot de passe est Obligatoire*
+          </div>
+          <div *ngIf="formService.ConfirmPassword&&formService.ConfirmPassword.hasError('passwordMismatch')"
+               class="invalid-feedback">
+            Mot de Passe Incorrect*
+          </div>
         </div>
 
         <div class="form-group">
@@ -39,7 +56,7 @@
         <div class="form-group d-flex flex-column mt-4">
 
           <label>Language</label>
-          <select class="select_input">
+          <select class="select_input" formControlName="Language">
             <option value="French">French</option>
             <option value="English">English</option>
           </select>
@@ -49,13 +66,17 @@
         <div class="form-group ">
 
           <label>Date format</label>
-          <div class="d-flex justify-content-between w-50" >
-          <div><input type="radio" value="dd/mm/yyyy" checked><label class="ms-1">dd/mm/yyyy</label></div>
-            <div><input type="radio" value="mm/dd/yyyy"><label class="ms-1">mm/dd/yyyy</label></div>
-            <div><input type="radio" value="yyyy/mm/dd"><label class="ms-1">yyyy/mm/dd</label></div>
+          <div class="d-flex justify-content-between w-50" role="group">
+            <div><input type="radio" value="dd/mm/yyyy" formControlName="date_format"><label
+              class="ms-1">dd/mm/yyyy</label></div>
+            <div><input type="radio" value="mm/dd/yyyy" formControlName="date_format"><label
+              class="ms-1">mm/dd/yyyy</label></div>
+            <div><input type="radio" value="yyyy/mm/dd" formControlName="date_format"><label
+              class="ms-1">yyyy/mm/dd</label></div>
           </div>
         </div>
-        <div class="form-group"> <button type="button" class="btn btn-primary savebtn float-end">Save</button>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary savebtn float-end">Save</button>
         </div>
       </form>
 

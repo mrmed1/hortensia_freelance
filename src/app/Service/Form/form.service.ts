@@ -7,12 +7,14 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class FormService {
 
   formGroup = this.fb.group({
-    id: [null],
     Fullname: ['', Validators.required],
     Password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(30)]],
     Email: ['', [Validators.email, Validators.required]],
-
-  });
+    ConfirmPassword: ['', [Validators.required]],
+    CurrentPassword: ['', [Validators.required]],
+    Language: ['English', [Validators.required]],
+    date_format: ['dd/mm/yyyy', [Validators.required]],
+  }, {validator: this.passwordMatchValidator('Password', 'ConfirmPassword')});
 
   chartform = this.fbchart.group({
 
@@ -20,15 +22,23 @@ export class FormService {
     nbOfMonthsPassed: ['', Validators.required],
     donePercentage: ['', Validators.required],
     rapidSetting: ['', Validators.required],
-    mu: ['', Validators.required],
-    sig: ['', Validators.required],
+    mu: ['5.46', Validators.required],
+    sig: ['0.33', Validators.required],
     sigAdjustor: ['', Validators.required],
     selectjourmois: ['', Validators.required],
 
   });
 
+  /*profileform = this.Profileform.group({
+
+    Language: ['english', [Validators.required]],
+    date_format: ['', [Validators.required]]
+
+  });*/
+
   constructor(private fb: FormBuilder,
-              private fbchart: FormBuilder) {
+              private fbchart: FormBuilder,
+              private Profileform: FormBuilder) {
   }
 
   get id() {
@@ -43,8 +53,24 @@ export class FormService {
     return this.formGroup.get('Password');
   }
 
+  get ConfirmPassword() {
+    return this.formGroup.get('ConfirmPassword');
+  }
+
+  get date_format() {
+    return this.formGroup.get('date_format');
+  }
+
+  get CurrentPassword() {
+    return this.formGroup.get('CurrentPassword');
+  }
+
   get Email() {
     return this.formGroup.get('Email');
+  }
+
+  get Language() {
+    return this.formGroup.get('Language');
   }
 
   get inputDataDate() {
@@ -79,6 +105,7 @@ export class FormService {
     return this.chartform.get('selectjourmois');
   }
 
+
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
@@ -88,5 +115,29 @@ export class FormService {
         this.validateAllFormFields(control);
       }
     });
+  }
+
+  passwordMatchValidator(password: string, confirmPassword: string) {
+    return (formGroup: any) => {
+      const passwordControl = formGroup.controls[password];
+      const confirmPasswordControl = formGroup.controls[confirmPassword];
+
+      if (!passwordControl || !confirmPasswordControl) {
+        return null;
+      }
+
+      if (
+        confirmPasswordControl.errors &&
+        !confirmPasswordControl.errors.passwordMismatch
+      ) {
+        return null;
+      }
+
+      if (passwordControl.value !== confirmPasswordControl.value) {
+        confirmPasswordControl.setErrors({passwordMismatch: true});
+      } else {
+        confirmPasswordControl.setErrors(null);
+      }
+    };
   }
 }

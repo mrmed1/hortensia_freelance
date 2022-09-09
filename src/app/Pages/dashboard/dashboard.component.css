@@ -9,7 +9,9 @@
   vertical-align: revert;
 
 }
-
+.simulationbtn:hover {
+  background-color: rgba(255,238,255,.6666666667);
+}
 .simulationbtn {
   box-sizing: border-box;
 
@@ -49,6 +51,7 @@
 
 .btn:hover {
   color: white;
+
 }
 
 .font {
@@ -634,3 +637,5 @@ table.dataTable.no-footer {
 .tableSection td {
   border-right: 2px solid #bdbdbd;
 }
+
+

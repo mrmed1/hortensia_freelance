@@ -39,7 +39,7 @@
       </div>
       <div>
         <label>Tangentes aux extrémités (µ)</label></div>
-      <div><input (input)="changeTangente($event)" id="tengente" max="10" min="0.1" step="0.01" type="range"
+      <div><input (input)="changeTangente($event)" formControlName="mu" id="tengente" max="10" min="0.1" step="0.01" type="range"
                   value="5.49">
         <span id="TanValue">{{tangenteValue}}</span>
       </div>
@@ -47,7 +47,7 @@
     <div>
       <div><label>Décalage axe (σ)</label>
       </div>
-      <div><input (input)="changeoffset($event)" id="offset" max="15" min="-5" step="0.01" type="range" value="0"><span
+      <div><input (input)="changeoffset($event)" formControlName="sig" id="offset" max="15" min="-5" step="0.01" type="range" value="0"><span
         id="offsetValue">{{offsetValue}}</span></div>
     </div>
 

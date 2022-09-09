@@ -33,8 +33,11 @@ export class LoginComponent implements OnInit {
     this.webRequest.post("auth/login", user).subscribe(
       data => {
         if (data.status == 200)
+        {
           localStorage.setItem("id_user", data.body["_id"]["$oid"])
-        this.router.navigateByUrl("dashboard")
+          localStorage.setItem("auth-token",data.body["current_subscription"]["token"])
+          this.router.navigateByUrl("dashboard")
+        }
 
       },
       error => {

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { SettingsComponent } from './Pages/dashboard/MySettings/settings/setting
 import { SubscriptionComponent } from './Pages/dashboard/MySettings/subscription/subscription.component';
 import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.component';
 import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
+import { TokenInterceptor } from './Service/Security/Interceptor/token.interceptor';
 
 
 @NgModule({
@@ -64,7 +65,13 @@ import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.comp
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

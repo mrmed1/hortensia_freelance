@@ -69,7 +69,7 @@
                   </div>
                 </a>
               </li>
-              <li><a class="dropdown-item" routerLink="">
+              <li><a class="dropdown-item" href="">
                 <div class="forspacing">
                   <svg fill="none" height="10" viewBox="0 0 10 10" width="10" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -204,9 +204,9 @@
 
       <div class="openmodal">
         <div class="row"><h1 class="title">ouvrir une simulation</h1></div>
-        <div class="row"><input class="searchinput" placeholder="&#xf002;" type="text"></div>
+        <div class="row"><input class="searchinput" #tableSimulation id="searchinput" placeholder="&#xf002;" type="text"></div>
 
-        <table class="bordered w-100 mt-3 display" id="example">
+        <table class="bordered w-100 mt-3 display" #dataTable id="datatable">
 
           <thead>
           <tr class="brd">
@@ -218,7 +218,8 @@
           </thead>
 
 
-          <tbody>
+          <tbody  *ngFor="let data of tabletodisplayrafmoids[0]">
+
           <tr>
             <td>
               <div class="d-flex gap-3">
@@ -228,11 +229,11 @@
                     fill="#0B69FF"/>
                 </svg>
 
-                <span>Brielle Williamson</span>
+                <span>{{data["title"]}}</span>
               </div>
             </td>
-            <td>Integration Specialist</td>
-            <td>New York</td>
+            <td>Sigmoids</td>
+            <td>09/09/20222</td>
             <td>
               <svg fill="none" height="24" viewBox="0 0 18 24" width="18" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -248,7 +249,7 @@
 
         </table>
 
-        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit"><span>Ouvrir</span>
+        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit" id="openbtn"><span>Ouvrir</span>
         </button>
 
       </div>

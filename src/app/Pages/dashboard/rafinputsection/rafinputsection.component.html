@@ -1,6 +1,5 @@
-
 <form (ngSubmit)="onSubmit()" class="form" [formGroup]="formService.chartform">
-  <div class="inputsSection" >
+  <div class="inputsSection">
     <h2>Information a renseigner</h2>
 
 
@@ -31,7 +30,7 @@
         </div>
       </div>
 
-      <input placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text" >
+      <input placeholder="Entier naturel" formControlName="nbOfMonthsPassed" type="text">
     </div>
     <div>
       <label>Pourcentage du réalisé<img
@@ -39,28 +38,52 @@
         src="assets/icon/info_icon.svg"
         title="A combien est votre avancement à la date des données?">
       </label>
+<div id="percent">
+  <input id="pourcentage" placeholder="Nombre en pourcentage" formControlName="donePercentage" type="number" value="">
 
-      <input  placeholder="Nombre en pourcentage" formControlName="donePercentage"  type="number" value="">
+</div>
+    </div>
+    <div>
+      <div class="w-100">
+        <div class="btn-group " role="group">
+          <input class="btn-check" id="datefincalculer"
+                 formControlName="datefin"
+                 value="datefincalculer"
+                 type="radio">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="datefincalculer">Date de fin à
+            calculer</label>
+          <input class="btn-check" id="restefairecalculer"
+                 formControlName="datefin"
+                 type="radio" value="restefairecalculer">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="restefairecalculer">Reste à faire
+            à calculer</label>
+
+        </div>
+      </div>
     </div>
     <h2>Paramétrage des courbes</h2>
     <div>
       <div class="forselect"><label class="rapid">Réglage rapide :</label>
-        <div class="btn-group type rapids" role="group" >
-          <input autocomplete="off" class="btn-check" id="lineaireraf"  name="rapidSetting" >
+        <div class="btn-group type rapids" role="group">
+          <input autocomplete="off" class="btn-check" id="lineaireraf" name="rapidSetting">
           <label class="btn btn-outline-primary fontradio justify-content-center" for="lineaireraf">~Linéaire</label>
 
-          <input autocomplete="off" checked class="btn-check"  id="classiqueraf"  name="rapidSetting">
-          <label class="btn btn-outline-primary fontradio justify-content-center" for="classiqueraf">~S-Curve Classique</label>
+          <input autocomplete="off" checked class="btn-check" id="classiqueraf" name="rapidSetting">
+          <label class="btn btn-outline-primary fontradio justify-content-center" for="classiqueraf">~S-Curve
+            Classique</label>
 
         </div>
       </div>
       <div><label>Tangentes aux extrémités (µ)</label></div>
-      <div><p>0.1</p><input max="5" min="0.1" step="0.01" type="range" (input)="changeTangente($event)"  value="3.22" id="tengente">
-        <p  id="TanValue">{{tangenteValue}}</p></div>
+      <div><p>0.1</p><input max="5" min="0.1" step="0.01" type="range" (input)="changeTangente($event)" value="3.22"
+                            id="tengente">
+        <p id="TanValue">{{tangenteValue}}</p></div>
     </div>
     <div>
       <div><label>Décalage axe (σ)</label></div>
-      <div><p>-5</p><input max="10" min="-5" step="0.01" type="range" value="0.33" (input)="changeoffset($event)"  id="offset"><p id="offsetValue">{{offsetValue}}</p></div>
+      <div><p>-5</p><input max="10" min="-5" step="0.01" type="range" value="0.33" (input)="changeoffset($event)"
+                           id="offset">
+        <p id="offsetValue">{{offsetValue}}</p></div>
     </div>
     <button type="submit">Date de fin et courbe prévisionnelle</button>
 

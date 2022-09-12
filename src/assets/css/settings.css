@@ -73,12 +73,13 @@ body{
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 12px;
   line-height: 32px;
+
   display: inline-block;
   position: relative;
-  left: 35px;
-  top: 10px;
+  left: 25px;
+  top: 8px;
   color: #FFFFFF;
   transform: rotate(45deg);
 }
@@ -229,6 +230,26 @@ table.pricing td{
   position: absolute;
   width: 299px;
   height: 56px;
+
+
+  /* blue */
+
+  background: #0B69FF;
+  /* General/Flash Planning Blue */
+
+  border: 1px solid #0AB4FF;
+  border-radius: 4px;
+
+}
+.upgradebtn {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+
+
+  width: 237px;
+  height: 63px;
 
 
   /* blue */

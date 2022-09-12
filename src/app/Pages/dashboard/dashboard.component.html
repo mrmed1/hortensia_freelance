@@ -117,65 +117,87 @@
         <app-sigmoidinputsection (sendDataEvent)="receiveMessage($event)"
                                  *ngIf="inputProj == 'sigmoid'"></app-sigmoidinputsection>
       </div>
+      <div class="d-flex flex-column">
+        <form [formGroup]="formService.chartTypeForm">
+          <div class="form-group ">
+            <div class="btn-group d-flex gap-2 w-50" role="group">
+              <input class="btn-check " type="radio" id="enPourcent" value="enPourcent" (change)="consolelog()"
+                     formControlName="chartType">
+              <label class="btn btn-outline-primary fontradio justify-content-center " for="enPourcent">Valeurs en
+                %</label>
 
-      <div class="chartSection">
+              <input class="btn-check " type="radio" value="enDevise" id="enDevise" data-bs-target="#Cout_Modal"
+                     data-bs-toggle="modal" (change)="consolelog()" formControlName="chartType">
+              <label class="btn btn-outline-primary fontradio justify-content-center" for="enDevise">Valeurs en devise
+              </label>
 
-        <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copy chart (PNG)</span>
-        </div>
-        <div class="pcurveChart" id="ps-curve-chart">
-          <app-graph [tabledata]="tableparent" (sendDataTable)="receiveDataTable($event)"></app-graph>
-        </div>
-        <div class="helperLabels">
-          <div><p>Nombre de mois restant : <br><span>-</span></p>
-            <p>Date de fin prévisionnelle : <br><span class="majus">-</span></p></div>
-          <div>
-            <div><img alt="Green Circle"
-                      src="assets/icon/green-circle.svg"><span>Pourcentage d’avacement par mois</span></div>
-            <div><img alt="Blue Circle"
-                      src="assets/icon/blue-circle.svg"><span>Pourcentage d’avacement cumulé</span></div>
+              <input class="btn-check " type="radio" value="enHeure" id="enHeure" (change)="consolelog()"
+                     data-bs-target="#Heure_Modal"
+                     data-bs-toggle="modal" formControlName="chartType">
+              <label class="btn btn-outline-primary fontradio justify-content-center" for="enHeure">Valeurs en heure
+              </label>
+            </div>
+          </div>
+        </form>
+        <div class="chartSection">
+
+          <div class="copyicon active"><img alt="Copy" src="assets/icon/copy.svg"><span>Copier le Graphique</span>
+          </div>
+          <div class="pcurveChart" id="ps-curve-chart">
+            <app-graph [tabledata]="tableparent" (sendDataTable)="receiveDataTable($event)"></app-graph>
+          </div>
+          <div class="helperLabels">
+            <div><p>Nombre de mois restant : <br><span>-</span></p>
+              <p>Date de fin prévisionnelle : <br><span class="majus">-</span></p></div>
+            <div>
+              <div><img alt="Green Circle"
+                        src="assets/icon/green-circle.svg"><span>Pourcentage d’avacement par mois</span></div>
+              <div><img alt="Blue Circle"
+                        src="assets/icon/blue-circle.svg"><span>Pourcentage d’avacement cumulé</span></div>
+            </div>
           </div>
         </div>
       </div>
 
 
     </div>
-<!--    <div class="tableSection">
-      <div class="copyBtns">
-        <div class="copyBtn active"><img alt="Copier"
-                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
-        </div>
-        <div class="copyBtn active"><img alt="Copier"
-                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
-        </div>
-      </div>
-      <table #dataTable class="tablestat bordered ">
-        <thead>
-        <tr>
-          <th>Date</th>
-          <th *ngFor="let mois of Table[0]">Mois {{mois}}</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <th class="border-bottom-0">Pourcentage d’avacement par mois</th>
-          <td *ngFor="let avancemois of Table[2]">{{avancemois}}</td>
+    <!--    <div class="tableSection">
+          <div class="copyBtns">
+            <div class="copyBtn active"><img alt="Copier"
+                                             src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
+            </div>
+            <div class="copyBtn active"><img alt="Copier"
+                                             src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
+            </div>
+          </div>
+          <table #dataTable class="tablestat bordered ">
+            <thead>
+            <tr>
+              <th>Date</th>
+              <th *ngFor="let mois of Table[0]">Mois {{mois}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th class="border-bottom-0">Pourcentage d’avacement par mois</th>
+              <td *ngFor="let avancemois of Table[2]">{{avancemois}}</td>
 
-        </tr>
-        <tr>
-          <th class="border-bottom-0">Pourcentage d’avacement cumulé</th>
-          <td *ngFor="let avancecumule of Table[1]">{{avancecumule}}</td>
-        </tr>
+            </tr>
+            <tr>
+              <th class="border-bottom-0">Pourcentage d’avacement cumulé</th>
+              <td *ngFor="let avancecumule of Table[1]">{{avancecumule}}</td>
+            </tr>
 
-        </tbody>
-      </table>
-    </div>-->
-    <div class="_tableSection_11jjx_252" >
+            </tbody>
+          </table>
+        </div>-->
+    <div class="_tableSection_11jjx_252">
       <div class="_copyBtns_11jjx_257">
-        <div class="copyBtn active" ><img alt="Copier"
+        <div class="copyBtn active"><img alt="Copier"
                                          src="../../../assets/icon/copy.svg"><span>Copier le tableau (CSV)</span>
         </div>
-        <div class="copyBtn active"  id="copy" (click)="copyTable()"><img alt="Copier"
-                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
+        <div class="copyBtn active" id="copy" (click)="copyTable()"><img alt="Copier"
+                                                                         src="../../../assets/icon/copy.svg"><span>Copier le tableau (HTML)</span>
         </div>
       </div>
       <div class="_tableContainer_11jjx_264">
@@ -286,7 +308,8 @@
 
         </table>
 
-        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit" id="openbtn" (click)="openSimulation()">
+        <button class="btn btn-primary  modalbtn  mt-4" data-bs-dismiss="modal" type="submit" id="openbtn"
+                (click)="openSimulation()">
           <span>Ouvrir</span>
         </button>
 
@@ -298,7 +321,7 @@
 
 
 <!-- delete Modal -->
-<div aria-hidden="true" aria-labelledby="openModal" class="modal fade" id="deleteModal" tabindex="-1">
+<div aria-hidden="true" aria-labelledby="deleteModal" class="modal fade" id="deleteModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content centermodal">
 
@@ -309,7 +332,8 @@
           <div class="form-group d-flex flex-column gap-3">
 
             <label>Pour validé tapé le nom de fichier</label>
-            <div class="row"><input class="form-control input-box suppinput " [ngModelOptions]="{standalone: true}" [(ngModel)]="rafmoidtodelete"
+            <div class="row"><input class="form-control input-box suppinput " [ngModelOptions]="{standalone: true}"
+                                    [(ngModel)]="rafmoidtodelete"
                                     placeholder="Nom de la simulation" type="text"></div>
           </div>
           <div class="d-flex gap-3">
@@ -324,5 +348,64 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+
+<!-- Cout_Modal -->
+<div aria-hidden="true" aria-labelledby="Cout_Modal" class="modal fade" id="Cout_Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="">
+          <h3 class="title">Ajouter les réglages</h3>
+
+          <form class="form mt-4 ">
+            <div class="form-group d-flex flex-column gap-3">
+              <label for="Nom">Coût Total</label>
+              <input class="form-control input-box" [(ngModel)]="simulationName"
+                     placeholder="Coût Total Prévu" type="text" [ngModelOptions]="{standalone: true}">
+
+            </div>
+
+
+            <button class="btn btn-primary loginbtn mt-4" (click)="saveSimulation()" type="submit">Save</button>
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Heure_Modal -->
+<div aria-hidden="true" aria-labelledby="Cout_Modal" class="modal fade" id="Heure_Modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div class="">
+          <h3 class="title">Ajouter les réglages</h3>
+
+          <form class="form mt-4 ">
+            <div class="form-group d-flex flex-column gap-3">
+              <label for="Nom">Nombre d'heure</label>
+              <input class="form-control input-box" [(ngModel)]="simulationName"
+                     placeholder="Nombre total d'heure prévu :" type="text" [ngModelOptions]="{standalone: true}">
+
+            </div>
+
+
+            <button class="btn btn-primary loginbtn mt-4" (click)="saveSimulation()" type="submit">Save</button>
+          </form>
+
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

@@ -641,3 +641,8 @@ table.dataTable.no-footer {
 .input-box {
   padding: 10px;
 }
+
+.choicegraphtype {
+  height: 32px;
+
+}

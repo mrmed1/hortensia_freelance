@@ -21,14 +21,19 @@ export class FormService {
     inputDataDate: ['', Validators.required],
     nbOfMonthsPassed: ['', Validators.required],
     donePercentage: ['', Validators.required],
-    rapidSetting: ['', Validators.required],
+    rapidSetting: [''],
     mu: ['3.22', Validators.required],
     sig: ['0.33', Validators.required],
-    sigAdjustor: ['', Validators.required],
-    selectjourmois: ['', Validators.required],
+    datefin:['datefincalculer'],
+    sigAdjustor: [''],
+    selectjourmois: [''],
+
 
   });
 
+  chartTypeForm = this.fb.group({
+    chartType: ['enPourcent']
+  })
   /*profileform = this.Profileform.group({
 
     Language: ['english', [Validators.required]],
@@ -91,6 +96,9 @@ export class FormService {
 
   get sig() {
     return this.chartform.get('sig');
+  }
+  get chartType() {
+    return this.chartTypeForm.get('chartType');
   }
 
   get sigAdjustor() {

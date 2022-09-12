@@ -25,7 +25,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   simulationName: string;
   rafmoidtodelete = "";
 
-
   constructor(private renderer: Renderer2,
               public formService: FormService,
               private tokenstorage: TokenstorageService,
@@ -190,4 +189,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
   }
 
+  consolelog() {
+    console.log(this.formService.chartType.value)
+  }
 }

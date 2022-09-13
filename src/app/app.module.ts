@@ -28,7 +28,11 @@ import { SidebarComponent } from './Pages/dashboard/MySettings/sidebar/sidebar.c
 import { ResetpasswordComponent } from './Pages/resetpassword/resetpassword.component';
 import { TokenInterceptor } from './Service/Security/Interceptor/token.interceptor';
 import { ClipboardModule } from 'ngx-clipboard';
-
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,15 +66,28 @@ import { ClipboardModule } from 'ngx-clipboard';
     NgApexchartsModule,
     MatSnackBarModule,
     ChartsModule,
-    ClipboardModule
+    ClipboardModule,
+    SocialLoginModule,
 
 
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '1081392549294-9i19lsibeg6hga6lk1od62m34egabog0.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
     }
   ],
   bootstrap: [AppComponent]

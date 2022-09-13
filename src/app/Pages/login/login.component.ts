@@ -5,6 +5,9 @@ import {WebRequestService} from "../../Service/Webrequest/web-request.service";
 import {TokenstorageService} from "../../Service/Security/tokenstorage.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {NotificationService} from "../../Service/Notification/notification.service";
+import { SocialAuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+
 
 @Component({
   selector: 'app-login',
@@ -19,7 +22,8 @@ export class LoginComponent implements OnInit {
               public formService: FormService,
               private webRequest: WebRequestService,
               private tokenStorage: TokenstorageService,
-              private notificationservice:NotificationService) {
+              private notificationservice:NotificationService,
+              private authService: SocialAuthService) {
   }
 
   ngOnInit(): void {
@@ -46,5 +50,11 @@ export class LoginComponent implements OnInit {
       }
     )
   }
-
+  signInWithGoogle(): void {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+      (data) => {
+        console.log(data)
+      }
+    )
+  }
 }
